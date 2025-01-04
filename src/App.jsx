@@ -1,11 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
-import About from './About.jsx'
-import Navbar from './Navbar'
+import About from './pages/About'
+import Navbar from './pages/Navbar'
+import Intro from './pages/Intro'
+
 
 function App() {
   return (
     <>
       <Navbar />
+      <Intro />
       <Routes>
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<About />} />
