@@ -12,7 +12,7 @@ function Intro() {
             className="w-32 lg:w-40 rounded-full"
           />
           <div className="text-center lg:text-left">
-            <h1 className="text-2xl lg:text-3xl font-bold font-mono">Rushil Patel</h1>
+            <h1 className="text-2xl lg:text-3xl font-bold font-mono dark:text-white">Rushil Patel</h1>
             <div className="text-gray-500 text-center">
               <p className="text-base">Software Developer Intern</p>
               <p className="text-base">[Odoo]</p>
@@ -20,7 +20,7 @@ function Intro() {
           </div>
         </div>
         <div className="lg:max-w-3xl text-center lg:text-end lg:m-0 mt-5">
-          <p className="font-mono lg:text-base text-sm">
+          <p className="font-mono lg:text-base text-sm dark:text-white">
             I'm a software developer, thinker and a creator.
             <br />
             <br />
