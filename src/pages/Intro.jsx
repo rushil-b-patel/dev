@@ -3,9 +3,9 @@ import Projects from './Projects';
 
 function Intro() {
   return (
-    <div className='container mx-auto px-24 py-10 max-w-7xl'>
+    <div className='container mx-auto lg:px-24 px-6 lg:py-12 py-6 max-w-7xl'>
       <div className="flex flex-col lg:flex-row justify-between">
-        <div className="flex flex-col items-center space-y-4">
+        <div className="flex flex-col items-center space-y-2">
           <img
             src="/profile.jpg"
             alt="profile"
@@ -19,9 +19,9 @@ function Intro() {
             </div>
           </div>
         </div>
-        <div className="lg:max-w-3xl">
-          <p className="font-mono lg:text-base text-sm space-y-4">
-            !Hola, I'm Rushil Patel. I'm a software developer intern at Odoo.
+        <div className="lg:max-w-3xl text-center lg:text-end lg:m-0 mt-5">
+          <p className="font-mono lg:text-base text-sm">
+            I'm a software developer, thinker and a creator.
             <br />
             <br />
             I am a Computer Science and Engineering student at CHARUSAT
@@ -32,6 +32,7 @@ function Intro() {
             React JS, Node JS, and Express JS. Additionally, I have hands-on
             experience with tools such as MySQL,Tailwind CSS, MongoDB, Firebase,
             Git and GitHub.
+            <br />
             <br />
             <br />
             See you around!
