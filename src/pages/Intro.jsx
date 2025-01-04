@@ -3,22 +3,24 @@ import Projects from './Projects';
 
 function Intro() {
   return (
-    <div>
-      <div className="lg:flex justify-center gap-14 mx-10">
-        <div className="flex flex-col items-center space-y-1">
+    <div className='container mx-auto px-24 py-10 max-w-7xl'>
+      <div className="flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col items-center space-y-4">
           <img
             src="/profile.jpg"
             alt="profile"
-            className="lg:w-40 w-32 rounded-full"
+            className="w-32 lg:w-40 rounded-full"
           />
-          <h1 className="lg:text-3xl text-xl font-bold font-mono whitespace-nowrap">Rushil Patel</h1>
-          <div className="flex flex-col items-center whitespace-nowrap">
-            <p className="text-gray-500 text-base">Software Developer Intern</p>
-            <p className="text-gray-500 text-base">[Odoo]</p>
+          <div className="text-center lg:text-left">
+            <h1 className="text-2xl lg:text-3xl font-bold font-mono">Rushil Patel</h1>
+            <div className="text-gray-500 text-center">
+              <p className="text-base">Software Developer Intern</p>
+              <p className="text-base">[Odoo]</p>
+            </div>
           </div>
         </div>
-        <div className="max-w-2xl">
-          <p className="font-mono lg:text-base text-sm">
+        <div className="lg:max-w-3xl">
+          <p className="font-mono lg:text-base text-sm space-y-4">
             !Hola, I'm Rushil Patel. I'm a software developer intern at Odoo.
             <br />
             <br />
