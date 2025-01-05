@@ -21,7 +21,7 @@ function Intro() {
           </div>
         </div>
         <div className="lg:max-w-3xl lg:m-0 mt-5">
-          <div className="lg:text-base text-sm text-end dark:text-gray-300 lg:space-y-1">
+          <div className="lg:text-base text-sm dark:text-gray-300 lg:space-y-1">
             <div>
               I'm a software developer, thinker and a creator.
             </div>
@@ -31,7 +31,10 @@ function Intro() {
             <div>
               See you around!
             </div>
-            <div className='flex justify-end'>
+            <div>
+              See you around!
+            </div>
+            <div style={{marginTop: '2rem'}}>
               <SocialMedia />
             </div>
           </div>

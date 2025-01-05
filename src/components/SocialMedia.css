@@ -4,10 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
     gap: 20px;
     overflow: hidden;
-    border-radius: 27px;
   }
   
   .card a {
@@ -55,6 +53,10 @@
   }
   
   .card a svg:first-child path {
+    fill: rgb(0, 0, 0);
+  }
+
+  .dark .card a svg:first-child path {
     fill: rgb(255, 255, 255);
   }
   
