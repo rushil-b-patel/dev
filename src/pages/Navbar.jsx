@@ -11,7 +11,7 @@ function Navbar() {
     }
 
   return (
-    <nav className='flex justify-between items-center text-black dark:text-white px-4 py-2 my-5 lg:mx-auto mx-6 max-w-6xl border-[2px] rounded-lg border-black dark:border-white'>
+    <nav className='flex justify-between items-center text-black dark:text-gray-100 px-4 py-2 my-5 lg:mx-auto mx-6 max-w-6xl border-[1px] rounded-lg'>
         <div className='flex space-x-2'>
             {localStorage.getItem('theme') === 'light' ? <img src='/window.svg' alt='window' className='w-6' /> : <img src='/window-white.svg' alt='window' className='w-6' />}
             {localStorage.getItem('theme') === 'light' ? <img src='/arrow.svg' alt='arrow' className='w-6' />  : <img src='/arrow-white.svg' alt='window' className='w-6' />}

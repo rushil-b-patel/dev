@@ -3,7 +3,7 @@ import Arrow from "./Arrow";
 
 const ProjectCard = (props) => {
   return (
-    <div className="group relative lg:w-[767px] rounded-[20px] bg-[#f5f5f5] dark:bg-[#0C0C0C] p-5 px-8 border-2 border-black dark:border-white transition-all duration-500 overflow-visible hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[0_4px_18px_0_rgba(255,255,255,0.1)]">
+    <div className="group relative lg:w-[767px] rounded-[20px]  dark:bg-[#0C0C0C] p-5 px-8 border-[1px] transition-all duration-500 overflow-visible hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[0_4px_18px_0_rgba(255,255,255,0.1)]">
       <div className="grid text-black dark:text-white">
         <div className="flex justify-between items-center">
           <p className="text-2xl font-bold">{props.title}</p>

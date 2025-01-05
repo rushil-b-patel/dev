@@ -1,42 +1,40 @@
 import React from 'react'
 import Projects from './Projects';
+import SocialMedia from '../components/SocialMedia';
 
 function Intro() {
   return (
-    <div className='container mx-auto lg:px-24 px-6 lg:py-12 py-6 max-w-7xl'>
-      <div className="flex flex-col lg:flex-row justify-between">
+    <div className='container mx-auto lg:px-24 px-6 lg:py-12 py-6 max-w-5xl'>
+      <div className="flex flex-col lg:flex-row justify-between border-[1px] rounded p-5">
         <div className="flex flex-col items-center space-y-2">
           <img
             src="/profile.jpg"
             alt="profile"
-            className="w-32 lg:w-40 rounded-full"
+            className="w-32 lg:w-25 rounded-xl"
           />
           <div className="text-center lg:text-left">
-            <h1 className="text-2xl lg:text-3xl font-bold font-mono dark:text-white">Rushil Patel</h1>
-            <div className="text-gray-500 text-center">
+            <h1 className="text-2xl lg:text-3xl font-bold text-center dark:text-gray-200">Rushil Patel</h1>
+            <div className="text-gray-400 text-center">
               <p className="text-base">Software Developer Intern</p>
               <p className="text-base">[Odoo]</p>
             </div>
           </div>
         </div>
-        <div className="lg:max-w-3xl text-center lg:text-end lg:m-0 mt-5">
-          <p className="font-mono lg:text-base text-sm dark:text-white">
-            I'm a software developer, thinker and a creator.
-            <br />
-            <br />
-            I am a Computer Science and Engineering student at CHARUSAT
-            University[2021-2025]. <br />
-            <br />
-            I have a strong proficiency in Java, C/C++, JavaScript, HTML, CSS,
-            with object-oriented programming concepts(OOPS) and frameworks like
-            React JS, Node JS, and Express JS. Additionally, I have hands-on
-            experience with tools such as MySQL,Tailwind CSS, MongoDB, Firebase,
-            Git and GitHub.
-            <br />
-            <br />
-            <br />
-            See you around!
-          </p>
+        <div className="lg:max-w-3xl lg:m-0 mt-5">
+          <div className="lg:text-base text-sm text-end dark:text-gray-300 lg:space-y-1">
+            <div>
+              I'm a software developer, thinker and a creator.
+            </div>
+            <div>
+              Building Full Stack Applications, Distributed & Machine Learning Systems at scale.
+            </div>
+            <div>
+              See you around!
+            </div>
+            <div className='flex justify-end'>
+              <SocialMedia />
+            </div>
+          </div>
         </div>
       </div>
       <Projects />
