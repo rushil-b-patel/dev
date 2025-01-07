@@ -13,7 +13,7 @@ function Intro() {
             className="w-32 lg:w-25 rounded-xl"
           />
           <div className="text-center lg:text-left">
-            <h1 className="text-2xl lg:text-3xl font-bold text-center dark:text-gray-200">Rushil Patel</h1>
+            <h1 className="text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">Rushil Patel</h1>
             <div className="text-gray-400 text-center">
               <p className="text-base">Software Developer Intern</p>
               <p className="text-base">[Odoo]</p>
