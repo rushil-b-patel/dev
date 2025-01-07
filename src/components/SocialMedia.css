@@ -5,7 +5,8 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    overflow: hidden;
+    padding: 20px 20px 20px 0px;
+    overflow:visible;
   }
   
   .card a {
@@ -25,7 +26,7 @@
     border-radius: 15px;
   }
   .card a:nth-child(1):hover {
-    background-color: #d62976;
+    background-color: #c71610;
   }
   .card a:nth-child(2):hover {
     background-color: #00acee;
@@ -34,7 +35,7 @@
     background-color: #0072b1;
   }
   .card a:nth-child(4):hover {
-    background-color: #25d366;
+    background-color: #b45bfd;
   }
   
   .card a:active {

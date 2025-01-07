@@ -1,34 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { ThemeContext } from './ThemeContext';
 
 const Switch = () => {
 
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-
-  useEffect(() =>{
-    localStorage.setItem("theme", theme);
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      document.documentElement.classList.remove("light");
-    } else {
-      document.documentElement.classList.add("light");
-      document.documentElement.classList.remove("dark");
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-      const newTheme = theme === "light" ? "dark" : "light";
-      setTheme(newTheme);
-  };
-
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
     <StyledWrapper>
-      <label className="theme-switch">
+      <label className="theme-switch" aria-label='Toggle dark and light theme'>
         <input
           type="checkbox"
           className="theme-switch__checkbox"
-          // checked={}
+          checked={theme === "dark"}
           onChange={toggleTheme}
         />
         <div className="theme-switch__container">
