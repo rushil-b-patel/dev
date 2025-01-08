@@ -61,7 +61,7 @@ function Navbar() {
       </div>
       <div
         className={`${ menuOpen ? "flex" : "hidden"} lg:flex lg:space-x-4 space-y-4 font-medium lg:text-base absolute lg:relative 
-        top-full lg:w-auto w-full flex-col lg:flex-row bg-white dark:bg-[#111111] mt-2 lg:mt-0 p-4 lg:p-0 border lg:border-0 
+        top-full lg:w-auto w-full flex-col lg:flex-row mt-2 lg:mt-0 p-4 lg:p-0 border lg:border-0 backdrop-blur-2xl
         rounded-lg lg:space-y-0 z-50 mx-[-1rem] lg:mx-0`}
       >
         <Link
