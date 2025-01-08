@@ -1,58 +1,84 @@
-import React, { useContext } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import Switch from '../components/Switch';
-import { ThemeContext } from '../components/ThemeContext';
-import HamburgerMenu from '../components/HamburgerMenu';
+import React, { useContext, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Switch from "../components/Switch";
+import { ThemeContext } from "../components/ThemeContext";
+import HamburgerMenu from "../components/HamburgerMenu";
 
 function Navbar() {
+  const { theme } = useContext(ThemeContext);
+  const location = useLocation();
+  const pathname = location.pathname;
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const { theme } = useContext(ThemeContext);
-    const location = useLocation();
-    const pathname = location.pathname;
+  const handleMenuToggle = (e) => {
+    e.preventDefault();
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-    <nav className="flex justify-between items-center text-black dark:text-gray-100 px-4 lg:py-2 py-4 my-5 lg:mx-auto mx-6 max-w-6xl border-[1px] rounded-lg">
+    <nav className="relative flex justify-between items-center text-black dark:text-gray-100 px-4 lg:py-2 py-4 my-5 lg:mx-auto mx-6 max-w-6xl border-[1px] rounded-lg">
       <div className="flex space-x-2">
-        {theme === "light" ? (
-          <img src="/window.svg" alt="window" className="w-6" />
-        ) : (
-          <img src="/window-white.svg" alt="window" className="w-6" />
-        )}
-        {theme === "light" ? (
-          <img src="/arrow.svg" alt="arrow" className="w-6" />
-        ) : (
-          <img src="/arrow-white.svg" alt="arrow" className="w-6" />
-        )}
+        <img
+          src={`/window${theme === "dark" ? "-white" : ""}.svg`}
+          alt="window"
+          className="w-6"
+        />
+        <img
+          src={`/arrow${theme === "dark" ? "-white" : ""}.svg`}
+          alt="arrow"
+          className="w-6"
+        />
         <Link to="/">
-          <img src={theme === 'light' ? '/home.svg' : '/home-white.svg'} alt="home" className="w-6" />
+          <img
+            src={`/home${theme === "dark" ? "-white" : ""}.svg`}
+            alt="home"
+            className="w-6"
+          />
         </Link>
-        <img src={theme === 'light' ? '/slash.svg' : '/slash-white.svg'} alt="slash" className="w-6" />
-        <span className='font-medium font-mono'>
-          {pathname.split('/').filter(Boolean).map((segment, index) => (
-            <span key={index}>
-              {segment}
-              {index < pathname.split('/').filter(Boolean).length - 1 && '/'}
-            </span>
-          ))}
+        <img
+          src={`/slash${theme === "dark" ? "-white" : ""}.svg`}
+          alt="slash"
+          className="w-6"
+        />
+        <span className="font-medium font-mono">
+          {pathname
+            .split("/")
+            .filter(Boolean)
+            .map((segment, index, arr) => (
+              <span key={index}>
+                {segment}
+                {index < arr.length - 1 && "/"}
+              </span>
+            ))}
         </span>
       </div>
-      <div className='lg:hidden'>
-        <HamburgerMenu />
+      <div className="lg:hidden">
+        <HamburgerMenu
+          isOpen={menuOpen}
+          isDark={theme === "dark"}
+          onClick={handleMenuToggle}
+        />
       </div>
-      <div className="hidden lg:flex space-x-4 font-medium lg:text-base">
+      <div
+        className={`${ menuOpen ? "flex" : "hidden"} lg:flex lg:space-x-4 space-y-4 font-medium lg:text-base absolute lg:relative 
+        top-full lg:w-auto w-full flex-col lg:flex-row bg-white dark:bg-[#111111] mt-2 lg:mt-0 p-4 lg:p-0 border lg:border-0 
+        rounded-lg lg:space-y-0 z-50 mx-[-1rem] lg:mx-0`}
+      >
         <Link
-          className="hover:bg-slate-200 rounded p-1 lg:p-2 transition"
+          className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
           to="/about"
+          onClick={() => setMenuOpen(false)}
         >
           About
         </Link>
         <Link
-          className="hover:bg-slate-200 rounded p-1 lg:p-2 transition"
+          className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
           to="/project"
+          onClick={() => setMenuOpen(false)}
         >
           Project
         </Link>
-        <div className="flex items-center">
+        <div className="flex items-center justify-center lg:justify-start">
           <Switch />
         </div>
       </div>
@@ -60,4 +86,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;
