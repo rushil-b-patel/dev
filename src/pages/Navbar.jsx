@@ -66,17 +66,17 @@ function Navbar() {
       >
         <Link
           className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
-          to="/about"
+          to="/intro"
           onClick={() => setMenuOpen(false)}
         >
-          About
+          Intro
         </Link>
         <Link
           className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
-          to="/project"
+          to="/projects"
           onClick={() => setMenuOpen(false)}
         >
-          Project
+          Projects
         </Link>
         <div className="flex items-center justify-center lg:justify-start">
           <Switch />

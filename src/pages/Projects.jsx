@@ -3,12 +3,10 @@ import ProjectCard from "../components/ProjectCard";
 
 function Projects() {
   return (
-    <div className="mt-10 lg:mt-20 lg:flex justify-between">
-      <h1 className="text-3xl font-semibold sticky mb-8 dark:text-white">Projects</h1>
-      <div>
-        <div className="flex flex-col space-y-8">
+    <div className="mt-10 lg:mt-20 lg:flex justify-around mx-auto max-w-5xl">
+        <div className="grid lg:grid-cols-2 gap-8">
           <ProjectCard 
-              title="BuildFlow" 
+              title="BuildFlow"
               description='Designed and implemented a scalable and reliable architecture with isolated
               upload and deploy server for building and deploying the application.' 
               startDate='Oct 2024' 
@@ -38,7 +36,6 @@ function Projects() {
               codeLink='https://github.com/rushil-b-patel/Event-Ease'
               progress={100}
           />
-        </div>
       </div>
     </div>
   );

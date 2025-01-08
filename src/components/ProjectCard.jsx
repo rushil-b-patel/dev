@@ -4,7 +4,7 @@ import {Code} from "./Assets";
 
 const ProjectCard = (props) => {
   return (
-    <div className="group relative lg:w-[600px] rounded-lg  p-6 px-8 border-[1px] dark:border-gray-600 transition-all duration-500 overflow-visible hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[0_4px_18px_0_rgba(255,255,255,0.1)]">
+    <div className="group relative lg:w-[500px] lg:mx-auto mx-6 max-w-6xl rounded-lg  p-6 px-8 border-[1px] dark:border-gray-600 transition-all duration-500 overflow-visible hover:shadow-[0_4px_18px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[0_4px_18px_0_rgba(255,255,255,0.1)]">
       <div className="grid text-black dark:text-white">
         <div className="flex justify-between items-center">
           <p className="text-2xl font-medium">{props.title}</p>

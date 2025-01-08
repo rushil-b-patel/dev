@@ -1,12 +1,11 @@
 import React from 'react'
-import Projects from './Projects';
 import SocialMedia from '../components/SocialMedia';
 
 function Intro() {
   return (
     <div className='container mx-auto lg:px-24 px-6 lg:py-12 py-6 max-w-5xl'>
       <div className="flex flex-col lg:flex-row justify-between rounded">
-        <div className="flex flex-col items-center space-y-2">
+        <div className="flex flex-col items-center">
           <img
             src="/profile.jpg"
             alt="profile"
@@ -40,7 +39,6 @@ function Intro() {
           </div>
         </div>
       </div>
-      <Projects />
     </div>
   );
 }
