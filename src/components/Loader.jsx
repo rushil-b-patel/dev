@@ -21,7 +21,7 @@ const StyledWrapper = styled.div`
     content: '';
     width: 48px;
     height: 5px;
-    background: #021526;
+    background: #D9EAFD;
     position: absolute;
     top: 60px;
     left: 0;
@@ -33,22 +33,12 @@ const StyledWrapper = styled.div`
     content: '';
     width: 100%;
     height: 100%;
-    background: #111111;
+    background: #9AA6B2;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 4px;
     animation: jump7456 0.5s linear infinite;
-  }
- 
-  @media (prefers-color-scheme: dark) {
-    .loader:after {
-      background: #ffffff;
-    }
-    
-    .loader:before {
-      background: rgba(255, 255, 255, 0.2);
-    }
   }
  
   @keyframes jump7456 {
