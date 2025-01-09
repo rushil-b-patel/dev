@@ -40,7 +40,17 @@ const StyledWrapper = styled.div`
     border-radius: 4px;
     animation: jump7456 0.5s linear infinite;
   }
-
+ 
+  @media (prefers-color-scheme: dark) {
+    .loader:after {
+      background: #ffffff;
+    }
+    
+    .loader:before {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+ 
   @keyframes jump7456 {
     15% {
       border-bottom-right-radius: 3px;
