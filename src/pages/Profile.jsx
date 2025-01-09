@@ -1,10 +1,11 @@
 import React from 'react'
 import SocialMedia from '../components/SocialMedia';
-
-function Intro() {
+import Loader from '../components/Loader'
+function Profile() {
   return (
-    <div className='container mx-auto lg:px-24 px-6 lg:py-12 py-6 max-w-5xl'>
-      <div className="flex flex-col lg:flex-row justify-between rounded">
+    <div className=''>
+    <div className='mx-auto lg:px-24 items-center px-6 lg:py-28 py-12 max-w-5xl'>
+      <div className="flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col items-center">
           <img
             src="/profile.jpg"
@@ -15,32 +16,34 @@ function Intro() {
             <h1 className="text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">Rushil Patel</h1>
             <div className="text-gray-400 text-center">
               <p className="text-base">Software Developer Intern</p>
-              <p className="text-base">[Odoo]</p>
+              @<a href='https://www.odoo.com' target='_blank' className="text-base hover:underline">Odoo</a>
             </div>
           </div>
         </div>
         <div className="lg:max-w-3xl lg:m-0 mt-5">
-          <div className="lg:text-base text-sm dark:text-gray-300 space-y-1">
+          <div className="lg:text-base text-sm lg:text-justify text-center dark:text-gray-300 space-y-1">
             <div>
-              I'm a software developer, thinker and a creator.
+              Hey ! I'm a Programmer, thinker and a creator.
             </div>
             <div>
-              Building Full Stack Applications, Distributed & Machine Learning Systems at scale.
+              I build Full Stack Applications, Distributed & Cloud Engineering at scale.
+            </div>
+            <div>
+              I call myself a Photographer too..!
             </div>
             <div>
               See you around!
             </div>
-            <div>
-              See you around!
-            </div>
-            <div className='lg:block flex justify-center lg:mt-2' style={{ marginTop: '1rem' }}>
+            <div className='lg:block flex justify-center'>
               <SocialMedia />
             </div>
           </div>
         </div>
       </div>
+      </div>
+      <Loader />
     </div>
   );
 }
 
-export default Intro
+export default Profile

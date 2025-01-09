@@ -66,10 +66,10 @@ function Navbar() {
       >
         <Link
           className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
-          to="/intro"
+          to="/experience"
           onClick={() => setMenuOpen(false)}
         >
-          Intro
+          Experience
         </Link>
         <Link
           className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"

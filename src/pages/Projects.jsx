@@ -3,7 +3,7 @@ import ProjectCard from "../components/ProjectCard";
 
 function Projects() {
   return (
-    <div className="mt-10 lg:mt-20 lg:flex justify-around mx-auto max-w-5xl">
+    <div className="my-10 lg:flex justify-around mx-auto max-w-5xl">
         <div className="grid lg:grid-cols-2 gap-8">
           <ProjectCard 
               title="BuildFlow"
