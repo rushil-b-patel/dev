@@ -3,7 +3,6 @@ import SocialMedia from '../components/SocialMedia';
 import Loader from '../components/Loader'
 function Profile() {
   return (
-    <div className=''>
     <div className='mx-auto lg:px-24 items-center px-6 lg:py-28 py-12 max-w-5xl'>
       <div className="flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col items-center">
@@ -40,8 +39,9 @@ function Profile() {
           </div>
         </div>
       </div>
-      </div>
+      <div className="mt-20">
       <Loader />
+      </div>
     </div>
   );
 }
