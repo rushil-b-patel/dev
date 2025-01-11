@@ -1,6 +1,6 @@
 import React from 'react'
 import SocialMedia from '../components/SocialMedia';
-import Loader from '../components/Loader'
+import Resume from '../components/Resume';
 function Profile() {
   return (
     <div className='mx-auto lg:px-24 items-center px-6 lg:py-28 py-12 max-w-5xl'>
@@ -22,10 +22,10 @@ function Profile() {
         <div className="lg:max-w-3xl lg:m-0 mt-5">
           <div className="lg:text-base text-sm lg:text-justify text-center dark:text-gray-300 space-y-1">
             <div>
-              Hey ! I'm a Programmer, thinker and a creator.
+              Hey ! I'm a Programmer, Thinker and a Developer.
             </div>
             <div>
-              I build Full Stack Applications, Distributed & Cloud Engineering at scale.
+              I build Distributed, Full Stack Applications & Cloud Engineering at scale.
             </div>
             <div>
               I call myself a Photographer too..!
@@ -39,8 +39,8 @@ function Profile() {
           </div>
         </div>
       </div>
-      <div className="mt-20">
-      <Loader />
+      <div className="flex justify-center mt-20">
+        <Resume />      
       </div>
     </div>
   );
