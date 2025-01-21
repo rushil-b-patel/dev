@@ -8,7 +8,7 @@ const Experience = () => {
       startDate: "Jan 2024",
       techStack: ["Javascript", "Python", "XML", "git", "Github"],
       description:
-        "Collaborated with the development team to create dynamic and responsive user interfaces using React JS. Identified and resolved front-end bugs, ensuring a smooth and error-free user experience. Utilized Git for version control, participating in team code reviews and collaborating with fellow developers.",
+        "Odoo Software Learning",
     },
     {
       title: "Frontend Developer Intern",
