@@ -5,7 +5,7 @@ const Experience = () => {
     {
       title: "Software Developer Intern",
       comapny: "Odoo",
-      startDate: "Jan 2024",
+      startDate: "Jan 2025",
       techStack: ["Javascript", "Python", "XML", "git", "Github"],
       description:
         "Odoo Software Learning",
