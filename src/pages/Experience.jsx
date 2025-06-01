@@ -1,14 +1,12 @@
-import React from "react";
-
 const Experience = () => {
   const experiences = [
     {
       title: "Software Developer Intern",
       comapny: "Odoo",
       startDate: "Jan 2025",
-      techStack: ["Javascript", "Python", "XML", "git", "Github"],
+      techStack: ["Javascript", "Python", "XML", "SQL, SCSS"],
       description:
-        "Odoo Software Learning",
+        "I contributed to the Website team, enhancing the module that empowers users to create professional websites for their organizations. This experience deepened my understanding of web development within Odoo's integrated business applications. Additionally, I developed a comprehensive real estate application, integrating property management, agent and customer roles, with functionalities to buy, sell, and bid on properties.",
     },
     {
       title: "Frontend Developer Intern",
@@ -23,7 +21,7 @@ const Experience = () => {
 
   return (
     <div className="flex justify-center max-w-3xl lg:mx-auto m-10">
-      <ol className="relative border-s border-gray-200 dark:border-gray-700">
+      <ol className="relative border-s border-gray-200 dark:border-gray-700 cursor-pointer">
         {experiences.map((exp, index) => (
           <li key={index} className="border dark:border-gray-700 mb-10 ms-6 p-4 rounded transition duration-300 hover:shadow-[0_4px_10px_0_rgba(0,0,0,0.10)] dark:hover:shadow-[0_4px_10px_0_rgba(255,255,255,0.10)]">
             <span className="absolute flex items-center justify-center w-6 h-6 bg-gray-100 rounded-full -start-3 dark:bg-gray-800">
@@ -38,11 +36,11 @@ const Experience = () => {
               </svg>
             </span>
 
-            <h3 className="flex items-center mb-1 text-sm text-gray-400 dark:text-gray-500">
+            <h3 className="flex items-center mb-1 font-mono text-sm text-gray-600 dark:text-gray-400">
               {exp.startDate} - {exp.endDate? exp.endDate : "Present"}
             </h3>
 
-            <h1 className="block lg:text-2xl text-md font-mono text-xl dark:text-white">
+            <h1 className="block lg:text-2xl text-md font-bold text-xl dark:text-white">
               {exp.title}
             </h1>
             <h3 className="block mb-2 italic text-lg text-gray-500 dark:text-gray-400">

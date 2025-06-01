@@ -1,15 +1,15 @@
-import React from 'react'
 import SocialMedia from '../components/SocialMedia';
 import Resume from '../components/Resume';
+
 function Profile() {
   return (
     <div className='mx-auto lg:px-24 items-center px-6 lg:py-28 py-12 max-w-5xl'>
       <div className="flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col items-center">
           <img
-            src="/profile.jpg"
+            src="/profile.png"
             alt="profile"
-            className="w-32 lg:w-25 rounded-xl"
+            className="w-40  rounded-xl"
           />
           <div className="text-center lg:text-left">
             <h1 className="text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">Rushil Patel</h1>
@@ -33,14 +33,12 @@ function Profile() {
             <div>
               See you around!
             </div>
-            <div className='lg:block flex justify-center'>
+            <div className='justify-items-center lg:justify-items-start lg:block'>
               <SocialMedia />
+              <Resume />      
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center mt-20">
-        <Resume />      
       </div>
     </div>
   );

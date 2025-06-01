@@ -1,8 +1,6 @@
-import React from "react";
-
 function Resume() {
   return (
-    <button class="Documents-btn" onClick={() => window.open('https://drive.google.com/file/d/1JSiP-4GHmeyXzMVGrPxDmHKGJhMZl4Mq/view?usp=drive_link')}>
+    <button class="Documents-btn" onClick={() => window.open('https://drive.google.com/file/d/1-1yuADnfEN_-HmDp1YpblfzNmIxVgGpR/view?usp=drive_link')}>
       <span class="folderContainer">
         <svg
           class="fileBack"
