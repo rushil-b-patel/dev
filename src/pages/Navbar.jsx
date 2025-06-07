@@ -78,6 +78,12 @@ function Navbar() {
         >
           Projects
         </Link>
+        <a
+          className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
+          href="https://drive.google.com/file/d/1-1yuADnfEN_-HmDp1YpblfzNmIxVgGpR/view?usp=drive_link"
+          target="_blank">
+          Resume
+        </a>
         <div className="flex items-center justify-center lg:justify-start">
           <Switch />
         </div>

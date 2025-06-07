@@ -1,42 +1,50 @@
 import SocialMedia from '../components/SocialMedia';
-import Resume from '../components/Resume';
 
 function Profile() {
+  const introLines = [
+    "I'm a Learner, Developer and a Thinker.",
+    "I'm sometimes behind the camera, capturing life's moments.",
+    "Travelling around & See you around!",
+    "Bug --> Code --> Debug"
+  ];
+
   return (
-    <div className='mx-auto lg:px-24 items-center px-6 lg:py-28 py-12 max-w-5xl'>
-      <div className="flex flex-col lg:flex-row justify-between">
-        <div className="flex flex-col items-center">
-          <img
-            src="/profile.png"
-            alt="profile"
-            className="w-40  rounded-xl"
-          />
-          <div className="text-center lg:text-left">
-            <h1 className="text-2xl lg:text-3xl font-semibold text-center dark:text-gray-200">Rushil Patel</h1>
-            <div className="text-gray-400 text-center">
-              <p className="text-base">Software Developer Intern</p>
-              @<a href='https://www.odoo.com' target='_blank' className="text-base hover:underline">Odoo</a>
-            </div>
+    <div className=" flex items-center justify-center px-6">
+      <div className="max-w-6xl w-full">
+        <div className="text-center mb-8">
+          <div className="inline-block relative mb-6">
+            <img
+              src="/profile.png"
+              alt="Rushil Patel"
+              className="w-44   rounded-full object-cover shadow-2xl border-2 border-white dark:border-gray-800"
+            />
           </div>
-        </div>
-        <div className="lg:max-w-3xl lg:m-0 mt-5">
-          <div className="lg:text-base text-sm lg:text-justify text-center dark:text-gray-300 space-y-1">
-            <div>
-              Hey ! I'm a Programmer, Thinker and a Developer.
-            </div>
-            <div>
-              I build Distributed, Full Stack Applications & Cloud Engineering at scale.
-            </div>
-            <div>
-              I call myself a Photographer too..!
-            </div>
-            <div>
-              See you around!
-            </div>
-            <div className='justify-items-center lg:justify-items-start lg:block'>
-              <SocialMedia />
-              <Resume />      
-            </div>
+          
+          <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+            Rushil Bhaveshkumar Patel
+          </h1>
+          
+          <p className="text-xl font-semibold text-gray-600 dark:text-gray-300 mb-2 max-w-3xl mx-auto leading-relaxed">
+            Software Developer Intern @{' '}
+            <a 
+              href='https://www.odoo.com' 
+              target='_blank' 
+              className="text-[#65435c] dark:text-[#65435c] hover:underline font-semibold"
+            >
+              Odoo
+            </a>
+          </p>
+          
+          <p className="text-lg font-mono text-gray-500 dark:text-gray-400 mb-4 max-w-2xl mx-auto">
+            {introLines.map((line, index) => (
+                  <p key={index} className="text-base lg:text-lg">
+                    {line}
+                  </p>
+            ))}
+          </p>
+          
+          <div className="justify-center flex">
+            <SocialMedia />
           </div>
         </div>
       </div>
@@ -44,4 +52,4 @@ function Profile() {
   );
 }
 
-export default Profile
+export default Profile;
