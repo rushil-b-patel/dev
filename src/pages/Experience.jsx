@@ -2,15 +2,15 @@ const Experience = () => {
   const experiences = [
     {
       title: "Software Developer Intern",
-      comapny: "Odoo",
+      company: "Odoo",
       startDate: "Jan 2025",
-      techStack: ["Javascript", "Python", "XML", "SQL, SCSS"],
+      techStack: ["Javascript", "Python", "XML", "SQL", "Jquery", "SCSS"],
       description:
         "I contributed to the Website team, enhancing the module that empowers users to create professional websites for their organizations. This experience deepened my understanding of web development within Odoo's integrated business applications. Additionally, I developed a comprehensive real estate application, integrating property management, agent and customer roles, with functionalities to buy, sell, and bid on properties.",
     },
     {
       title: "Frontend Developer Intern",
-      comapny: "Codentic Software",
+      company: "Codentic Software",
       startDate: "May 2023",
       endDate: "Jun 2023",
       techStack: ["Next JS", "React JS", "Tailwind", "Bootstrap", "git", "Github"],
@@ -44,7 +44,7 @@ const Experience = () => {
               {exp.title}
             </h1>
             <h3 className="block mb-2 italic text-lg text-gray-500 dark:text-gray-400">
-              {exp.comapny}
+              {exp.company}
             </h3>
 
             <p className="text-base text-gray-500 text-justify dark:text-gray-400 mb-4">
