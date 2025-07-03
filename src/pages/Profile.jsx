@@ -25,14 +25,7 @@ function Profile() {
           </h1>
           
           <p className="text-xl font-semibold text-gray-600 dark:text-gray-300 mb-2 max-w-3xl mx-auto leading-relaxed">
-            Software Developer Intern @{' '}
-            <a 
-              href='https://www.odoo.com' 
-              target='_blank' 
-              className="text-[#65435c] dark:text-[#65435c] hover:underline font-semibold"
-            >
-              Odoo
-            </a>
+            Software Engineer
           </p>
           
           <p className="text-lg font-mono text-gray-500 dark:text-gray-400 mb-4 max-w-2xl mx-auto">
