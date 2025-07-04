@@ -1,9 +1,31 @@
-import {Arrow} from "./Assets";
-import {Code} from "./Assets";
+import { useEffect, useState } from "react";
+import { Arrow } from "./Assets";
+import { Code } from "./Assets";
+import CountUp from "./CountUp";
 
 const ProjectCard = (props) => {
+  const [progressValue, setProgressValue] = useState(0);
+
+  useEffect(() => {
+    if (props.progress) {
+      let start = 0;
+      const duration = 2500;
+      const startTime = performance.now();
+
+      const animate = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(progress * props.progress);
+        setProgressValue(value);
+        if (progress < 1) requestAnimationFrame(animate);
+      };
+
+      requestAnimationFrame(animate);
+    }
+  }, [props.progress]);
+
   return (
-    <div className="group relative lg:w-[500px] lg:mx-auto mx-6 max-w-6xl rounded-lg  p-6 px-8 border-[1px] dark:border-gray-600 transition-all duration-500 overflow-visible hover:shadow-[0_4px_10px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[0_4px_10px_0_rgba(255,255,255,0.1)] cursor-pointer">
+    <div className="group relative lg:w-[500px] lg:mx-auto mx-6 max-w-6xl rounded-lg p-6 px-8 border-[1px] dark:border-gray-600 transition-all duration-500 overflow-visible hover:shadow-[0_4px_10px_0_rgba(0,0,0,0.25)] dark:hover:shadow-[0_4px_10px_0_rgba(255,255,255,0.1)] cursor-pointer">
       <div className="grid text-black dark:text-white">
         <div className="flex justify-between items-center">
           <p className="text-2xl font-medium font-mono">{props.title}</p>
@@ -29,22 +51,33 @@ const ProjectCard = (props) => {
               </span>)
             )}
           </p>
-            <div className="flex justify-between">
-              {props.startDate && (
-                <div className="flex w-max border dark:border-gray-600 p-1 px-2 rounded-md bg-gray-[#f3f4f6] dark:bg-[#1a1a1a]">
-                  <p>{props.startDate}</p>
-                  <span className="mx-2">-</span>
-                  <p>{props.endDate}</p>
-                </div>
-              )}
-              <div className="flex items-end">
-                {props.progress}%
+          <div className="flex justify-between">
+            {props.startDate && (
+              <div className="flex w-max border dark:border-gray-600 p-1 px-2 rounded-md bg-gray-[#f3f4f6] dark:bg-[#1a1a1a]">
+                <p>{props.startDate}</p>
+                <span className="mx-2">-</span>
+                <p>{props.endDate}</p>
               </div>
+            )}
+            <div className="flex items-end">
+              <CountUp
+                from={0}
+                to={props.progress}
+                separator=","
+                direction="up"
+                duration={1}
+                className="count-up-text"
+              />%
             </div>
+          </div>
         </div>
+
         {props.progress && (
           <div className="w-full bg-gray-200 rounded-full h-2.5 mt-4 dark:bg-gray-700">
-            <div className="bg-gray-500 h-2.5 rounded-full" style={{width:`${props.progress}%`}}></div>
+            <div
+              className="bg-gray-500 h-2.5 rounded-full transition-all duration-100"
+              style={{ width: `${progressValue}%` }}
+            ></div>
           </div>
         )}
       </div>

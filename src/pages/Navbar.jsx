@@ -84,6 +84,13 @@ function Navbar() {
           target="_blank">
           Resume
         </a>
+        <Link
+          className="hover:bg-slate-200 dark:hover:bg-gray-700 rounded lg:p-2 transition w-full lg:w-auto text-center"
+          to="/gallery"
+          onClick={() => setMenuOpen(false)}
+        >
+          Gallery
+        </Link>
         <div className="flex items-center justify-center lg:justify-start">
           <Switch />
         </div>

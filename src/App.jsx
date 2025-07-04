@@ -3,6 +3,7 @@ import Navbar from './pages/Navbar'
 import Profile from './pages/Profile'
 import Projects from './pages/Projects'
 import Experience from './pages/Experience'
+import Gallery from './pages/Gallery'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<Profile />} />
         <Route path='/projects' element={<Projects />} />
         <Route path='/experience' element={<Experience />} />
+        <Route path='/gallery' element={<Gallery />} />
       </Routes>
     </div>
   )
