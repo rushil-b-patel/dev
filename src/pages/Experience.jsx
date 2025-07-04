@@ -1,12 +1,12 @@
 const Experience = () => {
   const experiences = [
     {
-      title: "Software Developer Intern",
+      title: "Software Engineer",
       company: "Odoo",
       startDate: "Jan 2025",
       techStack: ["Javascript", "Python", "XML", "SQL", "Jquery", "SCSS"],
       description:
-        "I contributed to the Website team, enhancing the module that empowers users to create professional websites for their organizations. This experience deepened my understanding of web development within Odoo's integrated business applications. Additionally, I developed a comprehensive real estate application, integrating property management, agent and customer roles, with functionalities to buy, sell, and bid on properties.",
+        "I am contributing to the Website team, enhancing the module that empowers users to create professional websites for their organizations. This experience deepened my understanding of web development within Odoo's integrated business applications. Additionally, I developed a comprehensive real estate application, integrating property management, agent and customer roles, with functionalities to buy, sell, and bid on properties.",
     },
     {
       title: "Frontend Developer Intern",
