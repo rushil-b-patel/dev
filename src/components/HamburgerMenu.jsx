@@ -1,13 +1,12 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const HamburgerMenu = ({ isOpen, isDark, onClick }) => {
   return (
     <StyledWrapper $isDark={isDark}>
       <label className="hamburger" onClick={onClick}>
-        <input 
-          type="checkbox" 
-          checked={isOpen} 
+        <input
+          type="checkbox"
+          checked={isOpen}
           onChange={() => {}}
         />
         <svg viewBox="0 0 32 32">

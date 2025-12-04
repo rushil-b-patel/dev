@@ -1,76 +1,90 @@
-const Experience = () => {
+import { useState } from 'react';
+
+export default function Experience() {
   const experiences = [
     {
-      title: "Software Engineer",
+      title: "Software Developer Engineer",
+      company: "Odoo",
+      startDate: "July 2025",
+      endDate: "Present",
+      techStack: ["Javascript", "Python", "XML", "SQL", "Jquery", "SCSS"],
+      description: [
+        "Contributing to the Website team, by improving the Odoo Website Builder module, optimizing page components, templates, and drag-and-drop features to improve user experience",
+        "Deepening understanding of web development gaining hands-on experience across both backend and frontend components."
+      ]
+    },
+    {
+      title: "Software Developer Intern",
       company: "Odoo",
       startDate: "Jan 2025",
-      techStack: ["Javascript", "Python", "XML", "SQL", "Jquery", "SCSS"],
-      description:
-        "I am contributing to the Website team, enhancing the module that empowers users to create professional websites for their organizations. This experience deepened my understanding of web development within Odoo's integrated business applications. Additionally, I developed a comprehensive real estate application, integrating property management, agent and customer roles, with functionalities to buy, sell, and bid on properties.",
+      endDate: "Jun 2025",
+      techStack: ["Javascript", "Python", "XML", "SQL", "SCSS"],
+      description: [
+        "Developed and customized Real Estate module, including end-to-end controllers, views, models, automated actions, and pdf reporting for seamless property, booking, and client management.",
+        "Gained hands-on experience with the complete Odoo framework, including ORM, QWeb, XML views, access rights, and server actions, modern OWL framework for frontend development."
+      ]
     },
     {
       title: "Frontend Developer Intern",
       company: "Codentic Software",
       startDate: "May 2023",
       endDate: "Jun 2023",
-      techStack: ["Next JS", "React JS", "Tailwind", "Bootstrap", "git", "Github"],
-      description:
-        "Collaborated with the development team to create dynamic and responsive user interfaces using React JS. Identified and resolved front-end bugs, ensuring a smooth and error-free user experience. Utilized Git for version control, participating in team code reviews and collaborating with fellow developers.",
+      techStack: ["Next JS", "React JS", "Tailwind", "Bootstrap", "Git"],
+      description: [
+        "Collaborated with the development team to create dynamic and responsive user interfaces using React JS.",
+        "Identified and resolved front-end bugs, ensuring a smooth user experience."
+      ]
     },
   ];
 
+  const [expandedIndex, setExpandedIndex] = useState(0);
+  const toggleExpand = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
-    <div className="flex justify-center max-w-3xl lg:mx-auto m-10">
-      <ol className="relative border-s border-gray-200 dark:border-gray-700 cursor-pointer">
+    <div className="max-w-3xl mx-auto px-6 relative">
+      <div className="absolute left-4 md:left-6 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 dark:bg-neutral-800" />
+      <div className="space-y-12">
         {experiences.map((exp, index) => (
-          <li key={index} className="border dark:border-gray-700 mb-10 ms-6 p-4 rounded transition duration-300 hover:shadow-[0_4px_10px_0_rgba(0,0,0,0.10)] dark:hover:shadow-[0_4px_10px_0_rgba(255,255,255,0.10)]">
-            <span className="absolute flex items-center justify-center w-6 h-6 bg-gray-100 rounded-full -start-3 dark:bg-gray-800">
-              <svg
-                className="w-2.5 h-2.5 text-black dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+          <div key={index} className="relative flex flex-col md:flex-row items-start mb-8 md:mb-0 pl-12 md:pl-16">
+            <div className="absolute -left-2 md:left-0 transform -translate-x-1/2 w-4 h-4 rounded-full bg-white dark:bg-black border-4 border-gray-300 dark:border-neutral-600 z-10 mt-1.5" />
+            <div className="w-full text-left">
+              <div
+                className="cursor-pointer group"
+                onClick={() => toggleExpand(index)}
               >
-                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-              </svg>
-            </span>
-
-            <h3 className="flex items-center mb-1 font-mono text-sm text-gray-600 dark:text-gray-400">
-              {exp.startDate} - {exp.endDate? exp.endDate : "Present"}
-            </h3>
-
-            <h1 className="block lg:text-2xl text-md font-bold text-xl dark:text-white">
-              {exp.title}
-            </h1>
-            <h3 className="block mb-2 italic text-lg text-gray-500 dark:text-gray-400">
-              {exp.company}
-            </h3>
-
-            <p className="text-base text-gray-500 text-justify dark:text-gray-400 mb-4">
-                <ul className="list-disc list-inside">
-                {exp.description.split(". ").map((desc, index) => (
-                    <li key={index}>
-                    {desc.trim()}
-                    {index < exp.description.split(". ").length - 1 && "."}
-                  </li>
-                ))}
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors">
+                  {exp.title}
+                </h3>
+                <div className="text-lg font-medium text-gray-700 dark:text-gray-400 mb-1">
+                  {exp.company}
+                </div>
+                <span className="text-sm font-mono text-gray-500 dark:text-gray-500 block mb-2">
+                  {exp.startDate} - {exp.endDate}
+                </span>
+              </div>
+              <div className={`overflow-hidden transition-all duration-500 ease-in-out ${expandedIndex === index ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
+                <ul className="list-disc space-y-2 text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed pl-4">
+                  {exp.description.map((point, i) => (
+                    <li key={i} className="text-left">{point}</li>
+                  ))}
                 </ul>
-            </p>
-            <div className="font-mono space-y-3 justify-between items-center lg:text-base text-sm text-gray-800 dark:text-gray-300">
-            <p className="flex flex-wrap gap-2">
-            {exp.techStack?.map((tech, index) => (
-              <span key={index} className="border dark:border-gray-600 px-2 py-1 rounded-md bg-gray-[#f3f4f6] dark:bg-[#1a1a1a] cursor-pointer">
-                {tech}
-              </span>)
-            )}
-          </p>
+                <div className="flex flex-wrap gap-2 justify-start">
+                  {exp.techStack.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 text-xs font-medium bg-gray-100 dark:bg-neutral-800 text-gray-600 dark:text-gray-300 rounded-md border border-gray-200 dark:border-neutral-700"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </li>
+          </div>
         ))}
-      </ol>
+      </div>
     </div>
   );
 };
-
-export default Experience;

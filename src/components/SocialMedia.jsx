@@ -1,6 +1,6 @@
 import "./SocialMedia.css";
 
-function SocialMedia() {
+export default function SocialMedia() {
   return (
     <div className="card">
       <a href="mailto:rushilpatel.cse@gmail.com">
@@ -52,5 +52,3 @@ function SocialMedia() {
     </div>
   );
 }
-
-export default SocialMedia;
