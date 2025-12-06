@@ -19,7 +19,7 @@ export default function Projects() {
       endDate: 'Ongoing',
       techStack: ['React JS', 'Node JS', 'MongoDB', 'T-CSS'],
       codeLink: 'https://github.com/rushil-b-patel/Whisper',
-      progress: 70,
+      progress: 80,
     },
     {
       title: "EventEase",
