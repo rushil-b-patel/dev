@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Arrow } from "./Assets";
 import { Code } from "./Assets";
 import CountUp from "./CountUp";
@@ -8,7 +9,6 @@ const ProjectCard = (props) => {
 
   useEffect(() => {
     if (props.progress) {
-      let start = 0;
       const duration = 2500;
       const startTime = performance.now();
 
@@ -83,6 +83,17 @@ const ProjectCard = (props) => {
       </div>
     </div>
   );
+};
+
+ProjectCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  techStack: PropTypes.arrayOf(PropTypes.string),
+  codeLink: PropTypes.string,
+  liveLink: PropTypes.string,
+  startDate: PropTypes.string,
+  endDate: PropTypes.string,
+  progress: PropTypes.number,
 };
 
 export default ProjectCard;

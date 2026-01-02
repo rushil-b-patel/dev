@@ -6,7 +6,6 @@ export const fetchPRs = async () => {
             throw new Error('Failed to fetch PRs');
         }
         const data = await response.json();
-        console.log(data);
         return data.items.map(pr => ({
             id: pr.id,
             title: pr.title,

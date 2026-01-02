@@ -1,5 +1,6 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from "ogl";
 import { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 function debounce(func, wait) {
   let timeout;
@@ -381,3 +382,11 @@ export default function CircularGallery({
   }, [items, bend, borderRadius, scrollSpeed, scrollEase]);
   return <div className="w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={containerRef} />;
 }
+
+CircularGallery.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  bend: PropTypes.number,
+  borderRadius: PropTypes.number,
+  scrollSpeed: PropTypes.number,
+  scrollEase: PropTypes.number,
+};
