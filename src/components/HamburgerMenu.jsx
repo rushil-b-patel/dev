@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const HamburgerMenu = ({ isOpen, isDark, onClick }) => {
   return (
@@ -17,6 +18,12 @@ const HamburgerMenu = ({ isOpen, isDark, onClick }) => {
     </StyledWrapper>
   );
 }
+
+HamburgerMenu.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  isDark: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 const StyledWrapper = styled.div`
   .hamburger {

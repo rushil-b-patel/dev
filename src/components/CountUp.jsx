@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useInView, useMotionValue, useSpring } from "framer-motion";
+import PropTypes from "prop-types";
 
 export default function CountUp({
   to,
@@ -79,3 +80,16 @@ export default function CountUp({
 
   return <span className={`${className}`} ref={ref} />;
 }
+
+CountUp.propTypes = {
+  to: PropTypes.number.isRequired,
+  from: PropTypes.number,
+  direction: PropTypes.oneOf(["up", "down"]),
+  delay: PropTypes.number,
+  duration: PropTypes.number,
+  className: PropTypes.string,
+  startWhen: PropTypes.bool,
+  separator: PropTypes.string,
+  onStart: PropTypes.func,
+  onEnd: PropTypes.func,
+};
