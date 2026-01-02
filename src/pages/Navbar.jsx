@@ -3,6 +3,14 @@ import Switch from "../components/Switch";
 import { ThemeContext } from "../components/ThemeContext";
 import HamburgerMenu from "../components/HamburgerMenu";
 
+const navLinks = [
+  { name: "Home", href: "#home" },
+  { name: "Tech-Stack", href: "#tech-stack" },
+  { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "PR's", href: "#github" },
+];
+
 function Navbar() {
   const { theme } = useContext(ThemeContext);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,13 +20,6 @@ function Navbar() {
     e.preventDefault();
     setMenuOpen(!menuOpen);
   };
-
-  const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Tech-Stack", href: "#tech-stack" },
-    { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
