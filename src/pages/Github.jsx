@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchPRs } from '../services/githubService';
 import { FaCodeBranch, FaGithub } from 'react-icons/fa';
+import ContributionHeatMap from '../components/ContributionHeatMap';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -56,6 +57,8 @@ export default function Github() {
 
     return (
         <div className="max-w-3xl mx-auto px-6">
+            <ContributionHeatMap username="rushil-b-patel" />
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
                 <div className="flex items-center gap-3">
                     <FaGithub className="text-2xl text-gray-900 dark:text-white" />

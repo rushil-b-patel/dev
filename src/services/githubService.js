@@ -1,3 +1,17 @@
+export const fetchContributions = async (username, year = 'last') => {
+    try {
+        const response = await fetch(
+            `https://github-contributions-api.jogruber.de/v4/${username}?y=${year}`
+        );
+        if (!response.ok) {
+            throw new Error('Failed to fetch contributions');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching contributions:', error);
+        return { total: {}, contributions: [] };
+    }
+};
 
 export const fetchPRs = async () => {
     try {
