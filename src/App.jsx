@@ -7,7 +7,7 @@ import Github from './pages/Github'
 
 export default function App() {
   return (
-    <div className='selection:bg-[#FBF5E5] dark:selection:bg-[#4C585B] min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-300'>
+    <div className='selection:bg-[#adadadab] dark:selection:bg-[#4f4f4f] min-h-screen bg-white dark:bg-neutral-900 transition-colors duration-300'>
       <Navbar />
       <main className="pt-20">
         <Hero />
