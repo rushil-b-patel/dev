@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
         <div className="max-w-4xl w-full">
            <ul className="list-disc text-lg text-gray-600 dark:text-gray-400 leading-relaxed space-y-1 pl-4 md:pl-[50px]">
-              <li>Currently building website builder at <b>Odoo</b>.</li>
+              <li>Currently optimizing website builder at <b>Odoo</b>.</li>
               <li>Skilled in <b>Next.js</b>, <b>React/Vite</b>, <b>JavaScript</b>, and modern web technologies.</li>
               <li>Passionate about cloud infrastructure, servers, and scalable software architecture.</li>
               <li>Continuously <u>learning</u>, <u>improving</u>, and <u>building</u> my life one step at a time.</li>
