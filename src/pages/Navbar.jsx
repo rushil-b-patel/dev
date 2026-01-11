@@ -80,7 +80,7 @@ function Navbar() {
         ))}
         <a
           className="text-center py-2 rounded-lg text-lg font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-neutral-800/50 hover:text-gray-900 dark:hover:text-white transition-colors"
-          href="https://drive.google.com/file/d/1-1yuADnfEN_-HmDp1YpblfzNmIxVgGpR/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1O8PvoXuIFKahQ2JlpMlVsBRoDIVGpb5e/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
@@ -106,7 +106,7 @@ function Navbar() {
         ))}
          <a
           className="px-4 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-neutral-800/50 hover:text-gray-900 dark:hover:text-white transition-colors border border-transparent hover:border-gray-200 dark:hover:border-neutral-700"
-          href="https://drive.google.com/file/d/1-1yuADnfEN_-HmDp1YpblfzNmIxVgGpR/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1O8PvoXuIFKahQ2JlpMlVsBRoDIVGpb5e/view?usp=drive_link"
           target="_blank"
           rel="noreferrer"
         >
