@@ -4,6 +4,7 @@ import { ThemeToggle } from "./components/ThemeToggle";
 import Experience from "./pages/Experience";
 import Intro from "./pages/Intro";
 import Projects from "./pages/Projects";
+import Work from "./pages/Work";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Intro />
         <Skills />
         <Experience />
+        <Work />
         <Projects />
         <Quote />
       </div>
