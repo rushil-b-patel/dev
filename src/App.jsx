@@ -1,3 +1,4 @@
+import GithubContributions from "./components/GithubContributions";
 import Quote from "./components/Quote";
 import Skills from "./components/Stack";
 import { ThemeToggle } from "./components/ThemeToggle";
@@ -16,6 +17,7 @@ export default function App() {
         <Experience />
         <Work />
         <Projects />
+        <GithubContributions />
         <Quote />
       </div>
     </main>
