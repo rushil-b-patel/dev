@@ -5,8 +5,9 @@ export function ThemeToggle() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <button
+      type="button"
       onClick={toggleTheme}
-      className="fixed top-5 right-5 z-50 w-8 h-8 flex items-center justify-center rounded-lg bg-gray-100 dark:bg-neutral-800 hover:bg-gray-200 dark:hover:bg-neutral-700 border border-gray-200 dark:border-neutral-700 transition-all duration-200"
+      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-neutral-200/90 bg-neutral-100/90 text-app-primary transition hover:bg-neutral-200/90 dark:border-neutral-700 dark:bg-neutral-800/90 dark:hover:bg-neutral-700/90"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (

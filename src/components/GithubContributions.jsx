@@ -27,7 +27,7 @@ export default function GithubContributions() {
 							blockMargin={2}
 							blockRadius={2}
 							labels={{
-								totalCount: "{{count}} contributions in {{year}}",
+								totalCount: "{{count}} contributions in the last year",
 								legend: { less: "Less", more: "More" },
 							}}
 							tooltips={{
