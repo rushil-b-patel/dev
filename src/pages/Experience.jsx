@@ -66,11 +66,11 @@ export default function Experience() {
                   )}
                 </div>
 
-                <div className="flex items-baseline justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
                   <h3 className="text-base font-semibold text-app-secondary leading-snug">
                     {exp.title}
                   </h3>
-                  <span className="text-xs text-app-muted font-mono shrink-0 ml-4">
+                  <span className="text-xs text-app-muted font-mono shrink-0 sm:ml-4">
                     {exp.period}
                   </span>
                 </div>
