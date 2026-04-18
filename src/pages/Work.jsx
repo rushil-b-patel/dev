@@ -68,13 +68,13 @@ export default function Work() {
             rel="noopener noreferrer"
             className="group flex items-center justify-between py-1 transition-all duration-200"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 min-w-0">
               <span style={{ backgroundColor: statusDot[pr.status] }} className="w-1.5 h-1.5 rounded-full shrink-0" />
               <span className="text-sm font-medium text-app-primary truncate group-hover:text-app-secondary transition-colors duration-200">
                 {pr.title}
               </span>
             </div>
-            <span className="text-xs font-mono text-app-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0">
+            <span className="text-xs font-mono text-app-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 shrink-0 hidden sm:inline">
                 {pr.repo}
             </span>
           </a>

@@ -11,8 +11,8 @@ export default function App() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-6 py-12 md:py-16">
-        <div className="mx-auto max-w-2xl">
+      <main className="min-h-screen px-4 sm:px-6 py-12 md:py-16 overflow-x-hidden">
+        <div className="mx-auto w-full max-w-2xl">
           <Suspense>
             <Routes>
               <Route path="/" element={<Home />} />

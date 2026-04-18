@@ -13,7 +13,7 @@ const navLinkClass = ({ isActive }) =>
 export default function Navbar() {
   return (
     <header className="w-full">
-      <div className="mx-auto flex h-14 w-full max-w-2xl items-center justify-between">
+      <div className="mx-auto flex px-6 md:px-0 h-14 w-full max-w-2xl items-center justify-between">
         <nav className="flex items-center gap-6" aria-label="Primary">
           <NavLink to="/" end className={navLinkClass}>
             Home
