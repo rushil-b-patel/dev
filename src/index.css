@@ -50,3 +50,20 @@ body {
     color: var(--text-primary);
   }
 }
+
+/* Blog: fenced code blocks (highlight.js + github-dark theme) */
+.blog-post pre.hljs,
+.blog-post pre:has(code.hljs) {
+  @apply rounded-xl border border-neutral-700 overflow-x-auto my-6 p-4;
+  background-color: #0d1117;
+}
+
+.blog-post pre code.hljs {
+  @apply block bg-transparent p-0 text-[0.875em] leading-relaxed font-mono;
+}
+
+.blog-post
+  :not(pre)
+  > code {
+  @apply rounded-md px-1.5 py-0.5 text-[0.875em] font-mono bg-gray-100 dark:bg-neutral-800 text-app-primary;
+}
