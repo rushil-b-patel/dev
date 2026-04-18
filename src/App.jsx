@@ -1,9 +1,11 @@
+import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import BlogIndex from "./pages/BlogIndex";
-import BlogPost from "./pages/BlogPost";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+
+const BlogIndex = lazy(() => import("./pages/BlogIndex"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 export default function App() {
   return (
@@ -11,12 +13,14 @@ export default function App() {
       <Navbar />
       <main className="min-h-screen px-6 py-12 md:py-16">
         <div className="mx-auto max-w-2xl">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<BlogIndex />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </div>
       </main>
     </>

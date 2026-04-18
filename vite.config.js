@@ -11,4 +11,14 @@ export default defineConfig({
       'date-fns',
     ],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'markdown': ['react-markdown', 'remark-gfm', 'rehype-highlight', 'highlight.js'],
+        },
+      },
+    },
+  },
 })
