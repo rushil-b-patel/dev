@@ -3,7 +3,9 @@ import { createContext, useState, useEffect } from 'react';
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(() =>
+    typeof window !== 'undefined' ? (localStorage.getItem('theme') || 'light') : 'light'
+  );
 
   useEffect(() => {
     localStorage.setItem('theme', theme);

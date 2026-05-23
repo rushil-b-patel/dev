@@ -13,7 +13,7 @@ export default function App() {
       <Navbar />
       <main className="min-h-screen px-4 sm:px-6 py-12 md:py-16 overflow-x-hidden">
         <div className="mx-auto w-full max-w-2xl">
-          <Suspense>
+          <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/blog" element={<BlogIndex />} />
