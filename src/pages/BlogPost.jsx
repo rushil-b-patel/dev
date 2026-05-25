@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import rehypeHighlight from "rehype-highlight";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link, useParams } from "react-router-dom";
@@ -17,6 +17,7 @@ import {
   textToId,
 } from "../lib/blog";
 import TableOfContents from "../components/TableOfContents";
+import ImageLightbox from "../components/ImageLightbox";
 
 function extractText(node) {
   if (!node) return "";
@@ -32,6 +33,7 @@ function extractText(node) {
 export default function BlogPost() {
   const { slug } = useParams();
   const post = slug ? getPostBySlug(slug) : null;
+  const [preview, setPreview] = useState(null);
 
   const headings = useMemo(() => {
     if (!post) return [];
@@ -87,11 +89,7 @@ export default function BlogPost() {
     a: ({ href, children, node, ...rest }) => {
       if (href?.startsWith("/")) {
         return (
-          <Link
-            to={href}
-            className="text-app-muted underline underline-offset-2 hover:text-app-primary"
-            {...rest}
-          >
+          <Link to={href} className="blog-link" {...rest}>
             {children}
           </Link>
         );
@@ -101,21 +99,29 @@ export default function BlogPost() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-app-muted underline underline-offset-2 hover:text-app-primary"
+          className="blog-link"
           {...rest}
         >
           {children}
         </a>
       );
     },
-    img: ({ src, alt, node, ...rest }) => (
-      <img
-        src={src}
-        alt={alt ?? ""}
-        className="rounded-xl border border-gray-200 dark:border-neutral-800 w-full h-auto my-6"
-        loading="lazy"
-        {...rest}
-      />
+    img: ({ src, alt, title, node, ...rest }) => (
+      <figure className="my-6">
+        <img
+          src={src}
+          alt={alt ?? ""}
+          className="rounded-xl border border-gray-200 dark:border-neutral-800 w-full h-auto cursor-zoom-in"
+          loading="lazy"
+          onClick={() => setPreview({ src, alt: alt ?? "" })}
+          {...rest}
+        />
+        {title ? (
+          <figcaption className="mt-2 text-center text-sm text-app-muted">
+            {title}
+          </figcaption>
+        ) : null}
+      </figure>
     ),
     h2: ({ children, node, ...rest }) => {
       const id = textToId(extractText(children));
@@ -166,6 +172,8 @@ export default function BlogPost() {
 
       <TableOfContents headings={headings} />
 
+      <ImageLightbox image={preview} onClose={() => setPreview(null)} />
+
       <article className="blog-post">
         <header className="mb-10">
           <h1 className="text-2xl md:text-3xl font-bold text-app-primary leading-snug">
@@ -185,7 +193,6 @@ export default function BlogPost() {
             "prose prose-neutral max-w-none dark:prose-invert",
             "prose-headings:scroll-mt-24 prose-headings:font-semibold",
             "prose-p:leading-relaxed prose-li:leading-relaxed",
-            "prose-a:text-app-muted prose-a:no-underline hover:prose-a:underline hover:prose-a:text-app-primary",
             "prose-code:text-app-primary prose-code:before:content-none prose-code:after:content-none",
             "prose-pre:p-0 prose-pre:bg-transparent prose-pre:border-0",
             "prose-blockquote:border-app-muted prose-blockquote:text-app-secondary",
