@@ -8,6 +8,7 @@ html.light {
   --text-secondary: #374151;
   --text-muted: #6b7280;
   --text-inverse: #f9fafb;
+  --saffron: #c15f3c;
 }
 
 html.dark {
@@ -16,6 +17,7 @@ html.dark {
   --text-secondary: #d4d4d8;
   --text-muted: #a1a1aa;
   --text-inverse: #111827;
+  --saffron: #da7756;
 }
 
 body {
@@ -49,6 +51,17 @@ body {
 
   .link-app:hover {
     color: var(--text-primary);
+  }
+
+  .blog-link {
+    color: var(--saffron);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+  }
+
+  .blog-link:hover {
+    opacity: 0.8;
   }
 }
 

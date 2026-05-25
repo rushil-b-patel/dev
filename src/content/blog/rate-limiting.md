@@ -72,7 +72,7 @@ The limit is enforced over a **moving** time span instead of a single fixed bloc
 
 - **Naive approach:** Store a timestamp per request, count how many fall in the last **N seconds**. Accurate, but memory grows with traffic painful at scale.
 
-![Sliding window 1](/Blogs/sliding-window-1.png)
+![Sliding window 1](/Blogs/sliding-window-1.png "Sliding window log: a timestamp stored per request")
 
 - **Production approach:** Most systems ([Upstash](https://upstash.com/docs/oss/sdks/ts/ratelimit/algorithms#sliding-window), [Cloudflare](https://www.cloudflare.com/application-services/products/rate-limiting/), etc.) use an **approximation** (floating window): keep two counters (__previous window__ and __current window__), weight the overlap with current window and add. Same rough behaviour, far less storage.
 
@@ -87,7 +87,7 @@ Steps:
 rate = (prevCount × prevWindowWeight) + currCount
 ```
 
-![Sliding window 2](/Blogs/sliding-window-2.png)
+![Sliding window 2](/Blogs/sliding-window-2.png "Sliding window counter: weighting the previous window by its overlap")
 
 Blocking behaviour will not match the naive algorithm request-for-request, but long-run enforcement is usually close and the implementation scales. [see real stats](https://blog.cloudflare.com/counting-things-a-lot-of-different-things/#:~:text=0.003%25%20of%20requests%20have%20been%20wrongly%20allowed%20or%20rate%20limited)
 
