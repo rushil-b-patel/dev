@@ -1,37 +1,24 @@
-import { NavLink } from "react-router-dom";
+"use client";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./ThemeToggle";
-import { RESUME_PDF_URL } from "../config/site";
-
-const navLinkClass = ({ isActive }) =>
-  [
-    "text-sm font-medium transition-colors duration-200",
-    isActive
-      ? "text-app-primary"
-      : "text-app-muted hover:text-app-primary",
-  ].join(" ");
+import { RESUME_PDF_URL } from "@/config/site";
 
 export default function Navbar() {
-  return (
-    <header className="w-full">
-      <div className="mx-auto flex px-6 md:px-0 h-14 w-full max-w-2xl items-center justify-between">
-        <nav className="flex items-center gap-6" aria-label="Primary">
-          <NavLink to="/" end className={navLinkClass}>
-            Home
-          </NavLink>
-          <NavLink to="/blog" className={navLinkClass}>
-            Blog
-          </NavLink>
-          <a
-            href={RESUME_PDF_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-app-muted transition-colors duration-200 hover:text-app-primary"
-          >
-            Resume
-          </a>
-        </nav>
-        <ThemeToggle />
-      </div>
-    </header>
-  );
+    const pathname = usePathname();
+    const navLinkClass = (href) =>
+        `text-sm font-medium transition-colors duration-200 ${pathname === href ? "text-app-primary" : "text-app-muted hover:text-app-primary"}`;
+
+    return (
+        <header className="w-full">
+            <div className="mx-auto flex px-6 md:px-0 h-14 w-full max-w-2xl items-center justify-between">
+                <nav className="flex items-center gap-6" aria-label="Primary">
+                    <Link href="/" className={navLinkClass("/")}>Home</Link>
+                    <Link href="/blog" className={navLinkClass("/blog")}>Blog</Link>
+                    <a href={RESUME_PDF_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-app-muted transition-colors duration-200 hover:text-app-primary">Resume</a>
+                </nav>
+                <ThemeToggle />
+            </div>
+        </header>
+    );
 }
