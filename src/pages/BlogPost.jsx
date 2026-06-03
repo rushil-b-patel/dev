@@ -174,7 +174,7 @@ export default function BlogPost() {
 
       <ImageLightbox image={preview} onClose={() => setPreview(null)} />
 
-      <article className="blog-post">
+      <article className="blog-post font-geist">
         <header className="mb-10">
           <h1 className="text-2xl md:text-3xl font-bold text-app-primary leading-snug">
             {post.title}
