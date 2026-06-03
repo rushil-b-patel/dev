@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { FaJs, FaPython, FaNodeJs, FaGitAlt, FaDocker, FaLinux, FaJava, FaAws, FaCloudflare } from "react-icons/fa";
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiMongodb, SiPostgresql, SiRedis, SiShadcnui } from "react-icons/si";
@@ -22,43 +23,20 @@ const technologies = [
 ];
 
 export default function Stack() {
-  const [hovered, setHovered] = useState(null);
-
-  return (
-    <section id="Stack" className="mt-10">
-      <h2 className="text-2xl font-bold">Stack</h2>
-      <div className="flex flex-wrap gap-4 mt-4">
-        {technologies.map((tech, index) => (
-          <div
-            key={index}
-            onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(null)}
-            className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-neutral-800 cursor-default transition-all duration-200 ease-out hover:bg-gray-200 dark:hover:bg-neutral-700 hover:-translate-y-1 hover:shadow-sm"
-          >
-            <div
-              className="text-xl transition-transform duration-200 ease-out"
-              style={{ transform: hovered === index ? "scale(1.2)" : "scale(1)" }}
-            >
-              {tech.icon}
+    const [hovered, setHovered] = useState(null);
+    return (
+        <section id="Stack" className="mt-10">
+            <h2 className="text-2xl font-bold">Stack</h2>
+            <div className="flex flex-wrap gap-4 mt-4">
+                {technologies.map((tech, index) => (
+                    <div key={index} onMouseEnter={() => setHovered(index)} onMouseLeave={() => setHovered(null)} className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-neutral-800 cursor-default transition-all duration-200 ease-out hover:bg-gray-200 dark:hover:bg-neutral-700 hover:-translate-y-1 hover:shadow-sm">
+                        <div className="text-xl transition-transform duration-200 ease-out" style={{ transform: hovered === index ? "scale(1.2)" : "scale(1)" }}>{tech.icon}</div>
+                        <div className="absolute -top-7 left-1/2 pointer-events-none" style={{ transform: hovered === index ? "translateX(-50%) translateY(0px)" : "translateX(-50%) translateY(4px)", opacity: hovered === index ? 1 : 0, transition: "opacity 150ms ease, transform 150ms ease" }}>
+                            <span className="block px-2 py-0.5 text-xs font-medium whitespace-nowrap rounded-md bg-gray-900 dark:bg-white text-app-inverse">{tech.name}</span>
+                        </div>
+                    </div>
+                ))}
             </div>
-
-            <div
-              className="absolute -top-7 left-1/2 pointer-events-none"
-              style={{
-                transform: hovered === index
-                  ? "translateX(-50%) translateY(0px)"
-                  : "translateX(-50%) translateY(4px)",
-                opacity: hovered === index ? 1 : 0,
-                transition: "opacity 150ms ease, transform 150ms ease",
-              }}
-            >
-              <span className="block px-2 py-0.5 text-xs font-medium whitespace-nowrap rounded-md bg-gray-900 dark:bg-white text-app-inverse">
-                {tech.name}
-              </span>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
