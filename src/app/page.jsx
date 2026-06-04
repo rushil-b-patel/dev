@@ -1,10 +1,11 @@
+import dynamic from "next/dynamic";
 import Intro from "@/components/Intro";
 import Stack from "@/components/Stack";
 import Experience from "@/components/Experience";
 import Work from "@/components/Work";
 import Projects from "@/components/Projects";
 import BlogSection from "@/components/BlogSection";
-import GithubContributions from "@/components/GithubContributions";
+const GithubContributions = dynamic(() => import("@/components/GithubContributions"), { loading: () => null });
 import Quote from "@/components/Quote";
 import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/config/site";
 

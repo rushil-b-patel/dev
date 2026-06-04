@@ -1,7 +1,22 @@
 import "./globals.css";
+import { Google_Sans } from "next/font/google";
+import { Geist } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeContext";
 import Navbar from "@/components/Navbar";
 import { DEFAULT_TITLE, DEFAULT_DESCRIPTION, SITE_URL, DEFAULT_OG_IMAGE } from "@/config/site";
+
+const googleSans = Google_Sans({
+    subsets: ["latin"],
+    weight: ["400", "500", "700"],
+    variable: "--font-google-sans",
+    display: "swap",
+});
+
+const geist = Geist({
+    subsets: ["latin"],
+    variable: "--font-geist-sans",
+    display: "swap",
+});
 
 export const metadata = {
     metadataBase: new URL(SITE_URL),
@@ -18,13 +33,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className="light" suppressHydrationWarning>
+        <html lang="en" className={`light ${googleSans.variable} ${geist.variable}`} suppressHydrationWarning>
             <head>
-                <script dangerouslySetInnerHTML={{ __html: `(function(){var t=localStorage.getItem('theme')||'light';document.documentElement.className=t})()` }} />
+                <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.classList.remove('light','dark');d.classList.add(localStorage.getItem('theme')||'light')})()` }} />
                 <link rel="icon" type="image/svg+xml" href="/rel.svg" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-                <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Geist:wght@300;400;500;600;700&display=optional" rel="stylesheet" />
             </head>
             <body className="font-sans">
                 <ThemeProvider>
