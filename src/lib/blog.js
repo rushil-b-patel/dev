@@ -5,7 +5,7 @@ import { textToId, formatPostDate } from "./blog-utils.js";
 
 export { textToId, formatPostDate };
 
-const BLOG_DIR = path.join(process.cwd(), "src/content/blog");
+const BLOG_DIR = path.join(process.cwd(), "content/blog");
 
 function parseFrontmatter(raw) {
     const text = raw.replace(/^\uFEFF/, "");
