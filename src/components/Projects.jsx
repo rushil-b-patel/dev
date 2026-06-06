@@ -5,6 +5,7 @@ const projectsList = [
     { title: "BuildFlow", description: "Scalable architecture with isolated upload and deploy servers for building and deploying applications end-to-end.", techStack: ["Node.js", "Cloudflare", "Redis"], liveLink: null, codeLink: "https://github.com/rushil-b-patel/Build-Flow" },
     { title: "Whisper", description: "Anonymous discussion platform for students to share opinions without revealing identity, addressing privacy concerns effectively.", techStack: ["React", "Node.js", "MongoDB", "Tailwind"], liveLink: "https://whisper.rushilpatel.dev/", codeLink: "https://github.com/rushil-b-patel/Whisper" },
     { title: "ChatGPT Prompt Indexer - Extension", description: "Indexing and searching through ChatGPT prompts for better organization and accessibility.", techStack: ["JavaScript", "CSS", "HTML"], liveLink: null, codeLink: "https://github.com/rushil-b-patel/chatGPT-prompt-indexer" },
+    { title: "Tracerate - CLI tool for network diagnostics", description: "Tracerate is a CLI network diagnostic tool that checks download/upload speed, ping, jitter, bufferbloat, regional latency, and IP/DNS info, all in one shot.", techStack: ["Python"], liveLink: "https://pypi.org/project/tracerate", codeLink: "https://github.com/rushil-b-patel/tracerate" },
 ];
 
 export default function Projects() {

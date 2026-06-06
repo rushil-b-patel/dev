@@ -1,12 +1,13 @@
 const prs = [
-    { title: "Add Breadcrumb to website editor", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/224247", status: "merged" },
+    { title: "Added Breadcrumb to website editor", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/224247", status: "merged" },
+    { title: "Can use Query Params to prefill form fields", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/264921", status: "open" },
+    { title: "Can select multiple options from dropdown list", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/255671" , status: "open" },
     { title: "Migrate Google Maps to new Places API and AdvancedMarkerElement", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/242765", status: "open" },
-    { title: "Add Dynamic Snippet Carousels for blogs, events & appointments", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/238099", status: "open" },
-    { title: 'Add "s_icon_list" snippet with FontAwesome icon support', repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/225823", status: "open" },
-    { title: "Refactor WebsiteUrlPicker component", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/226324", status: "open" },
-    { title: 'Add "s_icon" inner snippet', repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/214112", status: "merged" },
-    { title: "Fix drag and drop of apps on odoo home screen (won't be accessbile: enterprise)", repo: "odoo/enterprise", url: "https://github.com/odoo/enterprise/pull/82752", status: "merged" },
-    { title: "Custom Input in builder dropdown & Lazy Load dynamic snippet", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/215388", status: "closed" },
+    { title: "Added Dynamic Snippet Carousels for blogs, events & appointments", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/238099", status: "open" },
+    { title: "Lazy Load Dynamic Snippets", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/215388", status: "open" },
+    { title: "Refactored WebsiteUrlPicker component", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/226324", status: "open" },
+    { title: 'Added "Icon List" snippet with FontAwesome icon support', repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/225823", status: "open" },
+    { title: 'Added icon inner snippet', repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/214112", status: "merged" },
 ];
 
 const statusDot = { merged: "#8957e5", open: "#238636", closed: "#da3633" };
