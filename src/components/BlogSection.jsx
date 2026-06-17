@@ -9,10 +9,10 @@ export default function BlogSection() {
             {posts.length === 0 ? (
                 <p className="text-app-muted text-sm">No posts yet.</p>
             ) : (
-                <ul className="flex flex-col gap-3">
+                <ul className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
                     {posts.map((post) => (
-                        <li key={post.slug}>
-                            <Link href={`/blog/${post.slug}`} className="group block bg-white dark:bg-neutral-950 rounded-xl border border-gray-100 dark:border-neutral-800 hover:border-gray-900 dark:hover:border-white transition-all duration-300 px-6 py-4">
+                        <li key={post.slug} className="group">
+                            <Link href={`/blog/${post.slug}`} className="block py-5">
                                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                                     <h3 className="text-base font-semibold text-app-primary group-hover:underline underline-offset-2 decoration-gray-400 dark:decoration-neutral-500">{post.title}</h3>
                                     <time dateTime={post.date} className="text-xs text-app-muted tabular-nums shrink-0">{formatPostDate(post.date)}</time>

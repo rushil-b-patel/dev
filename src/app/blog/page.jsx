@@ -17,10 +17,10 @@ export default function BlogIndex() {
             {posts.length === 0 ? (
                 <p className="text-app-muted text-sm">No posts yet.</p>
             ) : (
-                <ul className="flex flex-col gap-3">
+                <ul className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
                     {posts.map((post) => (
-                        <li key={post.slug}>
-                            <Link href={`/blog/${post.slug}`} className="group block rounded-xl border border-gray-100 bg-white px-6 py-4 transition-all duration-300 hover:border-gray-900 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-white">
+                        <li key={post.slug} className="group">
+                            <Link href={`/blog/${post.slug}`} className="block py-5">
                                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                                     <h2 className="text-base font-semibold text-app-primary underline-offset-2 group-hover:underline decoration-gray-400 dark:decoration-neutral-500">{post.title}</h2>
                                     <time dateTime={post.date} className="shrink-0 text-xs tabular-nums text-app-muted">{formatPostDate(post.date)}</time>
