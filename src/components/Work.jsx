@@ -18,7 +18,7 @@ export default function Work() {
             <h2 className="text-2xl font-bold">Some of my work</h2>
             <div className="flex flex-col p-4">
                 {prs.map((pr, index) => (
-                    <a key={index} href={pr.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-1 transition-all duration-200">
+                    <a key={index} href={pr.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-1.5 transition-all duration-200">
                         <div className="flex items-center gap-3 min-w-0">
                             <span style={{ backgroundColor: statusDot[pr.status] }} className="w-1.5 h-1.5 rounded-full shrink-0" />
                             <span className="text-sm font-medium text-app-primary truncate group-hover:text-app-secondary transition-colors duration-200">{pr.title}</span>

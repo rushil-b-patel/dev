@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import Intro from "@/components/Intro";
-import Stack from "@/components/Stack";
 import Experience from "@/components/Experience";
 import Work from "@/components/Work";
 import Projects from "@/components/Projects";
@@ -26,7 +25,6 @@ export default function Home() {
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
             <Intro />
-            <Stack />
             <Experience />
             <Work />
             <Projects />

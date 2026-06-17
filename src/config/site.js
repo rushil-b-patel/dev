@@ -1,4 +1,4 @@
-export const SITE_URL = "https://rushilpatel.dev";
+export const SITE_URL = "https://www.rushilpatel.dev";
 export const SITE_NAME = "Rushil Patel";
 export const RESUME_PDF_URL = "/resume.pdf";
 export const DEFAULT_TITLE = "Rushil Patel | Full Stack Developer";
