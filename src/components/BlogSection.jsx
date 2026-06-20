@@ -12,13 +12,12 @@ export default function BlogSection() {
                 <ul className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
                     {posts.map((post) => (
                         <li key={post.slug} className="group">
-                            <Link href={`/blog/${post.slug}`} className="block py-5">
+                            <Link href={`/blog/${post.slug}`} className="block py-4">
                                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                                     <h3 className="text-base font-semibold text-app-primary group-hover:underline underline-offset-2 decoration-gray-400 dark:decoration-neutral-500">{post.title}</h3>
-                                    <time dateTime={post.date} className="text-xs text-app-muted tabular-nums shrink-0">{formatPostDate(post.date)}</time>
+                                    <span className="text-xs text-app-muted tabular-nums shrink-0">{formatPostDate(post.date)} · {post.readingMinutes} min</span>
                                 </div>
-                                {post.description && <p className="text-sm text-app-muted leading-relaxed mt-2 line-clamp-2">{post.description}</p>}
-                                <p className="text-xs text-app-muted mt-3">{post.readingMinutes} min read</p>
+                                {post.description && <p className="text-sm text-app-muted leading-relaxed mt-1 line-clamp-1">{post.description}</p>}
                             </Link>
                         </li>
                     ))}

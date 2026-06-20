@@ -20,13 +20,12 @@ export default function BlogIndex() {
                 <ul className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
                     {posts.map((post) => (
                         <li key={post.slug} className="group">
-                            <Link href={`/blog/${post.slug}`} className="block py-5">
+                            <Link href={`/blog/${post.slug}`} className="block py-4">
                                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                                     <h2 className="text-base font-semibold text-app-primary underline-offset-2 group-hover:underline decoration-gray-400 dark:decoration-neutral-500">{post.title}</h2>
-                                    <time dateTime={post.date} className="shrink-0 text-xs tabular-nums text-app-muted">{formatPostDate(post.date)}</time>
+                                    <span className="shrink-0 text-xs tabular-nums text-app-muted">{formatPostDate(post.date)} · {post.readingMinutes} min</span>
                                 </div>
-                                {post.description && <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-app-muted">{post.description}</p>}
-                                <p className="mt-3 text-xs text-app-muted">{post.readingMinutes} min read</p>
+                                {post.description && <p className="mt-1 line-clamp-1 text-sm leading-relaxed text-app-muted">{post.description}</p>}
                             </Link>
                         </li>
                     ))}

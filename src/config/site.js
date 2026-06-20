@@ -4,4 +4,4 @@ export const RESUME_PDF_URL = "/resume.pdf";
 export const DEFAULT_TITLE = "Rushil Patel | Full Stack Developer";
 export const DEFAULT_DESCRIPTION =
     "Rushil Patel is a Full Stack Developer specializing in web development, modern JavaScript and Cloud Technologies. View projects, contributions, and contact information.";
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-banner.png`;
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-banner.jpg`;
