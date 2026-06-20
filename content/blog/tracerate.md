@@ -1,5 +1,5 @@
 ---
-title: "Tracerate"
+title: "Tracerate - A CLI tool for Network Diagnostics"
 date: "2026-05-26"
 description: "A CLI tool that goes beyond speed testing. Checking download/upload, ping, jitter, bufferbloat, regional latency, and IP & DNS info."
 ---

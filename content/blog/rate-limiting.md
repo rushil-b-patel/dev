@@ -1,5 +1,5 @@
 ---
-title: "Rate Limiting - A CLI tool for Network Diagnostics"
+title: "Rate Limiting"
 date: "2026-04-16"
 description: "What rate limiting is, how common algorithms compare, and how Stripe and OpenAI apply limits in production."
 slug: "rate-limiting"
