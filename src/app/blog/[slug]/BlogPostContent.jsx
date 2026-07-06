@@ -8,6 +8,7 @@ import "highlight.js/styles/github-dark.css";
 import { formatPostDate, textToId } from "@/lib/blog-utils";
 import TableOfContents from "@/components/TableOfContents";
 import ImageLightbox from "@/components/ImageLightbox";
+import QueryDemo from "@/components/QueryDemo";
 
 function extractText(node) {
     if (!node) return "";
@@ -29,6 +30,7 @@ export default function BlogPostContent({ post, headings }) {
         p: ({ children, node, ...rest }) => {
             const hasImg = node?.children?.some((c) => c.tagName === "img");
             if (hasImg) return <>{children}</>;
+            if (extractText(children).trim() === "[query-demo]") return <QueryDemo />;
             return <p {...rest}>{children}</p>;
         },
         img: ({ src, alt, title, node, ...rest }) => (

@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { FiExternalLink, FiBookOpen } from "react-icons/fi";
 
 const projectsList = [
-    { title: "BuildFlow", description: "Scalable architecture with isolated upload and deploy servers for building and deploying applications end-to-end.", techStack: ["Node.js", "Cloudflare", "Redis"], liveLink: null, codeLink: "https://github.com/rushil-b-patel/Build-Flow" },
+    { title: "BuildFlow", description: "Scalable architecture with isolated upload and deploy servers for building and deploying applications end-to-end.", techStack: ["Node.js", "Cloudflare", "Redis"], liveLink: "https://buildflow.rushilpatel.dev", codeLink: "https://github.com/rushil-b-patel/Build-Flow" },
     { title: "Tracerate", description: "CLI network diagnostic tool that checks download/upload speed, ping, jitter, bufferbloat, regional latency, and IP/DNS info, all in one shot.", techStack: ["Python", "Pytest"], liveLink: "https://pypi.org/project/tracerate", codeLink: "https://github.com/rushil-b-patel/tracerate", blogLink: "/blog/tracerate" },
     { title: "Whisper", description: "Anonymous discussion platform for students to share opinions without revealing identity, addressing privacy concerns effectively.", techStack: ["React", "Node.js", "MongoDB", "Tailwind"], liveLink: "https://whisper.rushilpatel.dev/", codeLink: "https://github.com/rushil-b-patel/Whisper" },
     { title: "ChatGPT Prompt Indexer", description: "Browser extension for indexing and searching through ChatGPT prompts for better organization and accessibility.", techStack: ["JavaScript", "CSS", "HTML"], liveLink: null, codeLink: "https://github.com/rushil-b-patel/chatGPT-prompt-indexer" },
