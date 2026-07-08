@@ -21,10 +21,10 @@ export default function Intro() {
                 </div>
             </div>
             <p className="mt-8 md:mt-0">
-                Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> (Building &amp; Optimizing website builder).<br />
-                Skilled in <b>Vite.js, React.js</b>, <b>Next.js</b>, <b>JavaScript</b>, <b>Python</b> and modern web technologies.<br />
-                Passionate about servers, cloud infrastructure, and scalable software architecture.<br />
-                <b>Learning</b>, <b>building</b>, and <b>improving : )</b>
+                Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> (Building &amp; Optimizing the website builder).<br />
+                JS, Python, Vite, Next.js - whatever ships the features.<br />
+                Into servers, infra, systems that scale, and AI that builds.<br />
+                Learning, building, and improving <b>: )</b>
             </p>
         </div>
     );
