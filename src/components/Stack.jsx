@@ -26,7 +26,7 @@ export default function Stack() {
     const [hovered, setHovered] = useState(null);
     return (
         <section id="Stack" className="mt-10">
-            <h2 className="text-2xl font-bold">Stack</h2>
+            <h2 className="text-2xl font-bold">Tools of the trade</h2>
             <div className="flex flex-wrap gap-4 mt-4">
                 {technologies.map((tech, index) => (
                     <div key={index} onMouseEnter={() => setHovered(index)} onMouseLeave={() => setHovered(null)} className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-neutral-800 cursor-default transition-all duration-200 ease-out hover:bg-gray-200 dark:hover:bg-neutral-700 hover:-translate-y-1 hover:shadow-sm">
