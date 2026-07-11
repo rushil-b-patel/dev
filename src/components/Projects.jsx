@@ -13,7 +13,7 @@ export default function Projects() {
     return (
         <section id="Projects" className="mt-10">
             <h2 className="text-2xl font-bold mb-6">Side Quests</h2>
-            <div className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
+            <div className="divide-y divide-dashed divide-gray-200 dark:divide-neutral-800">
                 {projectsList.map((project, index) => (
                     <div key={index} className="py-4">
                         <div className="flex items-baseline justify-between gap-4">

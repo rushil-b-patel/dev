@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { FiCopy, FiCheck } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
@@ -17,6 +18,23 @@ function extractText(node) {
     if (Array.isArray(node)) return node.map(extractText).join("");
     if (typeof node === "object" && node.props) return extractText(node.props.children);
     return "";
+}
+
+function Pre({ children, node, ...rest }) {
+    const [copied, setCopied] = useState(false);
+    const copy = () => {
+        navigator.clipboard.writeText(extractText(children).replace(/\n$/, ""));
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+    return (
+        <div className="relative">
+            <pre {...rest}>{children}</pre>
+            <button onClick={copy} aria-label="Copy code" className="absolute top-2.5 right-2.5 rounded-md p-1.5 text-neutral-400 hover:text-neutral-100 bg-neutral-800/70 cursor-pointer transition-colors">
+                {copied ? <FiCheck size={14} /> : <FiCopy size={14} />}
+            </button>
+        </div>
+    );
 }
 
 export default function BlogPostContent({ post, headings }) {
@@ -41,6 +59,7 @@ export default function BlogPostContent({ post, headings }) {
         ),
         h2: ({ children, node, ...rest }) => { const id = textToId(extractText(children)); return <h2 id={id} {...rest}>{children}</h2>; },
         h3: ({ children, node, ...rest }) => { const id = textToId(extractText(children)); return <h3 id={id} {...rest}>{children}</h3>; },
+        pre: Pre,
     };
 
     return (

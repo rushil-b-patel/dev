@@ -31,7 +31,7 @@ export default function Work() {
             </div>
             <div className="divide-y divide-dashed divide-gray-200 dark:divide-neutral-800">
                 {visible.map((pr, index) => (
-                    <a key={page * PAGE_SIZE + index} href={pr.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-3 transition-all duration-200 hover:pl-2">
+                    <a key={page * PAGE_SIZE + index} href={pr.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-4 transition-all duration-200 hover:pl-2">
                         <div className="flex items-center gap-3 min-w-0">
                             <span className="text-app-muted text-xs font-mono w-5 shrink-0">{String(page * PAGE_SIZE + index + 1).padStart(2, "0")}</span>
                             <span className="text-sm text-app-primary truncate group-hover:text-app-secondary transition-colors duration-200">{pr.title}</span>

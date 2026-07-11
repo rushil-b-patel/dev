@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <html lang="en" className={`light ${googleSans.variable} ${geist.variable}`} suppressHydrationWarning>
             <head>
                 <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.classList.remove('light','dark');d.classList.add(localStorage.getItem('theme')||'light')})()` }} />
-                <link rel="icon" type="image/svg+xml" href="/rel.svg" />
+                <link rel="icon" type="image/svg+xml" href="/icon.svg" />
             </head>
             <body className="font-sans">
                 <ThemeProvider>

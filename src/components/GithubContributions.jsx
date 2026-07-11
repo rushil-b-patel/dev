@@ -17,7 +17,7 @@ export default function GithubContributions() {
 
     return (
         <section id="Contributions" className="mt-10">
-            <div className="rounded-xl border border-gray-100 dark:border-neutral-800 bg-white dark:bg-neutral-950 px-3 py-4">
+            <div className="rounded-xl border border-gray-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 px-3 py-4">
                 <div className="w-full flex justify-center select-none">
                     <div className="w-full max-w-full overflow-x-auto [scrollbar-width:thin]">
                         {mounted && <GitHubCalendar username="rushil-b-patel" year="last" theme={THEME} colorScheme={colorScheme} fontSize={12} blockSize={10} blockMargin={2} blockRadius={2} labels={{ totalCount: "{{count}} contributions in the last year", legend: { less: "Less", more: "More" } }} tooltips={{ activity: { text: (activity) => `${activity.count} contribution${activity.count === 1 ? "" : "s"} on ${activity.date}` } }} errorMessage="Could not load contributions." />}

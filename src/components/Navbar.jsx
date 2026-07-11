@@ -10,8 +10,8 @@ export default function Navbar() {
         `text-sm font-medium transition-colors duration-200 ${pathname === href ? "text-app-primary" : "text-app-muted hover:text-app-primary"}`;
 
     return (
-        <header className="w-full">
-            <div className="mx-auto flex px-6 md:px-0 h-14 w-full max-w-2xl items-center justify-between">
+        <header className="w-full px-4 sm:px-6">
+            <div className="mx-auto flex h-14 w-full max-w-2xl items-center justify-between">
                 <nav className="flex items-center gap-6" aria-label="Primary">
                     <Link href="/" className={navLinkClass("/")}>Home</Link>
                     <Link href="/blog" className={navLinkClass("/blog")}>Blog</Link>

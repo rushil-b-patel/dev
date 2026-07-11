@@ -25,12 +25,12 @@ export default function Experience() {
     return (
         <section id="Experience" className="mt-10">
             <h2 className="text-2xl font-bold mb-6">The journey so far</h2>
-            <div className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
+            <div className="divide-y divide-dashed divide-gray-200 dark:divide-neutral-800">
                 {experiences.map((exp, index) => {
                     const isOpen = expanded === index;
                     return (
                         <div key={index}>
-                            <button onClick={() => setExpanded(isOpen ? null : index)} className="w-full text-left cursor-pointer py-5">
+                            <button onClick={() => setExpanded(isOpen ? null : index)} className="w-full text-left cursor-pointer py-4">
                                 <div className="flex items-center gap-2 mb-0.5">
                                     <p className="font-medium text-app-primary">{exp.company}</p>
                                     {exp.current && <span className="relative flex h-2 w-2"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" /><span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500" /></span>}

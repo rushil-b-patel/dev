@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllSlugs, extractHeadings } from "@/lib/blog";
-import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/config/site";
+import { SITE_NAME, SITE_URL } from "@/config/site";
 import BlogPostContent from "./BlogPostContent";
 
 export function generateStaticParams() {
@@ -17,8 +17,8 @@ export async function generateMetadata({ params }) {
         description: post.description || `${post.title} — ${SITE_NAME}`,
         authors: [{ name: SITE_NAME, url: SITE_URL }],
         alternates: { canonical },
-        openGraph: { title: post.title, description: post.description || post.title, url: canonical, type: "article", publishedTime: post.date, authors: [SITE_NAME], images: [DEFAULT_OG_IMAGE] },
-        twitter: { card: "summary_large_image", title: post.title, description: post.description || post.title, images: [DEFAULT_OG_IMAGE], creator: "@rushil_b_patel" },
+        openGraph: { title: post.title, description: post.description || post.title, url: canonical, type: "article", publishedTime: post.date, authors: [SITE_NAME] },
+        twitter: { card: "summary_large_image", title: post.title, description: post.description || post.title, creator: "@rushil_b_patel" },
     };
 }
 

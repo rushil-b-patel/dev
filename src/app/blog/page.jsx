@@ -17,7 +17,7 @@ export default function BlogIndex() {
             {posts.length === 0 ? (
                 <p className="text-app-muted text-sm">No posts yet.</p>
             ) : (
-                <ul className="divide-y divide-dashed divide-gray-300 dark:divide-neutral-700">
+                <ul className="divide-y divide-dashed divide-gray-200 dark:divide-neutral-800">
                     {posts.map((post) => (
                         <li key={post.slug} className="group">
                             <Link href={`/blog/${post.slug}`} className="block py-4">
