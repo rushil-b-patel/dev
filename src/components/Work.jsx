@@ -37,8 +37,8 @@ export default function Work() {
                             <span className="text-sm text-app-primary truncate group-hover:text-app-secondary transition-colors duration-200">{pr.title}</span>
                         </div>
                         <div className="flex items-center gap-3 shrink-0 ml-4">
-                            <span className={`text-xs font-mono ${statusColor[pr.status]} hidden sm:inline`}>{statusLabel[pr.status]}</span>
                             <span className="text-xs font-mono text-app-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden md:inline">{pr.repo}</span>
+                            <span className={`text-xs font-mono ${statusColor[pr.status]} hidden sm:inline`}>{statusLabel[pr.status]}</span>
                         </div>
                     </a>
                 ))}
