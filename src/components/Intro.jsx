@@ -16,13 +16,13 @@ export default function Intro() {
                         <SocialMedia />
                     </div>
                 </div>
-                <div className="w-20 h-20 md:w-28 md:h-28 rounded-xl border border-gray-200 dark:border-neutral-700 overflow-hidden shrink-0 bg-gray-100 dark:bg-neutral-800">
-                    <Image src="/profile.jpg" alt="Rushil" width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" priority />
+                <div className="w-20 h-20 md:w-28 md:h-28 rounded-xl border border-rule overflow-hidden shrink-0 bg-surface">
+                    <Image src="/profile.jpg" alt="Rushil" width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500" priority />
                 </div>
             </div>
             <p className="mt-8 md:mt-0">
                 Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> (Building &amp; Optimizing the website builder).<br />
-                JS, Python, Vite, Next.js - whatever ships the features.<br />
+                JS, Python, Vite, Next.js — whatever ships the features.<br />
                 Into servers, infra, systems that scale, and AI that builds.<br />
                 Learning, building, and improving <b>: )</b>
             </p>

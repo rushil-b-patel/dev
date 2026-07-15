@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
             <body className="font-sans">
                 <ThemeProvider>
                     <Navbar />
-                    <main className="min-h-screen px-4 sm:px-6 py-12 md:py-16 overflow-x-hidden">
+                    <main className="min-h-screen px-4 sm:px-6 py-12 md:py-16">
                         <div className="mx-auto w-full max-w-2xl">{children}</div>
                     </main>
                 </ThemeProvider>

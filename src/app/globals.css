@@ -1,3 +1,5 @@
+/* Hallmark · genre: editorial · macrostructure: Long Document (single-column) · design-system: design.md · designed-as-app
+ * theme: custom (warm paper · saffron accent) · pre-emit critique: P4 H4 E4 S4 R5 V4 */
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -8,29 +10,71 @@
     --font-geist: var(--font-geist-sans), sans-serif;
 }
 
+@theme inline {
+    --color-rule: var(--rule);
+    --color-surface: var(--surface);
+    --color-saffron: var(--saffron);
+}
+
+:root {
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 html.light {
-    --background-color: #ffffff;
-    --text-primary: #111827;
-    --text-secondary: #374151;
-    --text-muted: #6b7280;
-    --text-inverse: #f9fafb;
-    --saffron: #c15f3c;
+    --background-color: oklch(99% 0.004 60);
+    --text-primary: oklch(24% 0.012 50);
+    --text-secondary: oklch(37% 0.01 50);
+    --text-muted: oklch(51% 0.01 50);
+    --text-inverse: oklch(98% 0.004 60);
+    --saffron: oklch(56% 0.13 40);
+    --rule: oklch(91% 0.006 60);
+    --surface: oklch(96.5% 0.004 60);
 }
 
 html.dark {
-    --background-color: #111111;
-    --text-primary: #f5f5f5;
-    --text-secondary: #d4d4d8;
-    --text-muted: #a1a1aa;
-    --text-inverse: #111827;
-    --saffron: #da7756;
+    --background-color: oklch(17% 0.008 50);
+    --text-primary: oklch(95% 0.005 60);
+    --text-secondary: oklch(85% 0.005 55);
+    --text-muted: oklch(68% 0.008 50);
+    --text-inverse: oklch(24% 0.012 50);
+    --saffron: oklch(65% 0.12 40);
+    --rule: oklch(28% 0.008 50);
+    --surface: oklch(23% 0.008 50);
+}
+
+html,
+body {
+    overflow-x: clip;
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-primary);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
+    transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-geist);
+}
+
+:focus-visible {
+    outline: 2px solid var(--saffron);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    html {
+        scroll-behavior: auto !important;
+    }
 }
 
 @utility text-app-primary {
@@ -51,7 +95,7 @@ body {
 
 @utility link-app {
     color: var(--text-muted);
-    transition: color 0.2s ease;
+    transition: color 0.2s var(--ease);
     &:hover {
         color: var(--text-primary);
     }
@@ -61,7 +105,7 @@ body {
     color: var(--saffron);
     text-decoration: underline;
     text-underline-offset: 2px;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s var(--ease);
     &:hover {
         opacity: 0.8;
     }
@@ -69,6 +113,7 @@ body {
 
 .blog-post pre.hljs,
 .blog-post pre:has(code.hljs) {
+    /* code blocks keep a fixed dark surface (github-dark); not paper-themed */
     @apply rounded-xl border border-neutral-700 overflow-x-auto my-6 p-4;
     background-color: #0d1117;
 }
@@ -78,5 +123,5 @@ body {
 }
 
 .blog-post :not(pre) > code {
-    @apply rounded-md px-1.5 py-0.5 text-[0.875em] font-mono bg-gray-100 dark:bg-neutral-800 text-app-primary;
+    @apply rounded-md px-1.5 py-0.5 text-[0.875em] font-mono bg-surface text-app-primary;
 }

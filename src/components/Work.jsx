@@ -29,15 +29,15 @@ export default function Work() {
                 <h2 className="text-2xl font-bold">What I&apos;ve been building</h2>
                 <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
             </div>
-            <div className="divide-y divide-dashed divide-gray-200 dark:divide-neutral-800">
+            <div className="divide-y divide-dashed divide-rule">
                 {visible.map((pr, index) => (
-                    <a key={page * PAGE_SIZE + index} href={pr.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-4 transition-all duration-200 hover:pl-2">
+                    <a key={page * PAGE_SIZE + index} href={pr.url} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between py-4 transition-transform duration-200 hover:translate-x-2">
                         <div className="flex items-center gap-3 min-w-0">
                             <span className="text-app-muted text-xs font-mono w-5 shrink-0">{String(page * PAGE_SIZE + index + 1).padStart(2, "0")}</span>
                             <span className="text-sm text-app-primary truncate group-hover:text-app-secondary transition-colors duration-200">{pr.title}</span>
                         </div>
                         <div className="flex items-center gap-3 shrink-0 ml-4">
-                            <span className="text-xs font-mono text-app-muted opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden md:inline">{pr.repo}</span>
+                            <span className="text-xs font-mono text-app-muted hidden md:inline">{pr.repo}</span>
                             <span className={`text-xs font-mono ${statusColor[pr.status]} hidden sm:inline`}>{statusLabel[pr.status]}</span>
                         </div>
                     </a>
