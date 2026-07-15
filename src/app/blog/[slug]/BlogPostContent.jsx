@@ -39,6 +39,7 @@ function Pre({ children, node, ...rest }) {
 
 export default function BlogPostContent({ post, headings }) {
     const [preview, setPreview] = useState(null);
+    let imgIndex = 0;
 
     const components = {
         a: ({ href, children, node, ...rest }) => {
@@ -51,12 +52,15 @@ export default function BlogPostContent({ post, headings }) {
             if (extractText(children).trim() === "[query-demo]") return <QueryDemo />;
             return <p {...rest}>{children}</p>;
         },
-        img: ({ src, alt, title, node, ...rest }) => (
-            <figure className="my-6">
-                <img src={src} alt={alt ?? ""} className="rounded-xl border border-gray-200 dark:border-neutral-800 w-full h-auto cursor-zoom-in" loading="lazy" onClick={() => setPreview({ src, alt: alt ?? "" })} {...rest} />
-                {title && <figcaption className="mt-2 text-center text-sm text-app-muted">{title}</figcaption>}
-            </figure>
-        ),
+        img: ({ src, alt, title, node, ...rest }) => {
+            const first = imgIndex++ === 0;
+            return (
+                <figure className="my-6">
+                    <img src={src} alt={alt ?? ""} className="rounded-xl border border-rule w-full h-auto cursor-zoom-in" loading={first ? "eager" : "lazy"} fetchPriority={first ? "high" : undefined} onClick={() => setPreview({ src, alt: alt ?? "" })} {...rest} />
+                    {title && <figcaption className="mt-2 text-center text-sm text-app-muted">{title}</figcaption>}
+                </figure>
+            );
+        },
         h2: ({ children, node, ...rest }) => { const id = textToId(extractText(children)); return <h2 id={id} {...rest}>{children}</h2>; },
         h3: ({ children, node, ...rest }) => { const id = textToId(extractText(children)); return <h3 id={id} {...rest}>{children}</h3>; },
         pre: Pre,

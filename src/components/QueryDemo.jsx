@@ -5,7 +5,7 @@ function Panel({ title, children }) {
     return (
         <div className="space-y-1">
             <div className="text-xs text-app-muted">{title}</div>
-            <pre className="rounded-lg border border-gray-200 dark:border-neutral-800 p-3 text-xs overflow-x-auto text-app-primary">{children}</pre>
+            <pre className="rounded-lg border border-rule p-3 text-xs overflow-x-auto text-app-primary">{children}</pre>
         </div>
     );
 }
@@ -43,7 +43,7 @@ export default function QueryDemo() {
             try { content = JSON.stringify(JSON.parse(content), null, 2); } catch {}
             setResponse(`HTTP ${res.status} ${res.statusText || "OK"}\n${headers}\n\n${content}`);
         } catch (e) {
-            setResponse(`Request failed: ${e.message}\n\nSomething between your browser and the server refused to carry QUERY — which is exactly the "ecosystem support" problem from section 4.`);
+            setResponse(`Request failed: ${e.message}\n\nSomething between your browser and the server refused to carry QUERY — which is exactly the “ecosystem support” problem from section 4.`);
         } finally {
             setSending(false);
         }
@@ -56,12 +56,12 @@ export default function QueryDemo() {
     ];
 
     return (
-        <div className="not-prose my-8 rounded-xl border border-gray-200 dark:border-neutral-800 p-4 space-y-4 font-geist">
+        <div className="not-prose my-8 space-y-4 font-geist">
             <div className="grid gap-3 sm:grid-cols-3">
                 {fields.map(({ label, ...input }) => (
                     <label key={label} className="text-xs text-app-muted space-y-1">
                         <span>{label}</span>
-                        <input className="w-full rounded-md border border-gray-200 dark:border-neutral-800 bg-transparent px-2 py-1 text-sm font-mono text-app-primary focus:outline-none focus:border-gray-400 dark:focus:border-neutral-600" {...input} />
+                        <input className="w-full rounded-md border border-rule bg-transparent px-2 py-1 text-sm font-mono text-app-primary" {...input} />
                     </label>
                 ))}
             </div>
@@ -72,7 +72,7 @@ export default function QueryDemo() {
                 <button
                     onClick={send}
                     disabled={sending}
-                    className="rounded-md border border-gray-200 dark:border-neutral-800 px-3 py-1.5 text-sm text-app-primary hover:bg-gray-50 dark:hover:bg-neutral-900 disabled:opacity-50"
+                    className="rounded-md border border-rule px-3 py-1.5 text-sm text-app-primary hover:bg-surface disabled:opacity-50"
                 >
                     {sending ? "Sending…" : "Send QUERY"}
                 </button>
@@ -84,7 +84,7 @@ export default function QueryDemo() {
                 plain GET returns everything, QUERY filters it.
             </div>
 
-            <div className="text-xs border border-rose-600 rounded-md px-3 py-2">
+            <div className="text-xs border border-saffron rounded-md px-3 py-2">
                 This is a controlled demo, it works because your browser sends the method string as-is and this server accepts it. In production, proxies, CDNs, or older infrastructure may reject the QUERY method.
             </div>
         </div>
