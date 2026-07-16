@@ -43,7 +43,7 @@ export default function QueryDemo() {
             try { content = JSON.stringify(JSON.parse(content), null, 2); } catch {}
             setResponse(`HTTP ${res.status} ${res.statusText || "OK"}\n${headers}\n\n${content}`);
         } catch (e) {
-            setResponse(`Request failed: ${e.message}\n\nSomething between your browser and the server refused to carry QUERY — which is exactly the “ecosystem support” problem from section 4.`);
+            setResponse(`Request failed: ${e.message}\n\nSomething between your browser and the server refused to carry QUERY - which is exactly the “ecosystem support” problem from section 4.`);
         } finally {
             setSending(false);
         }

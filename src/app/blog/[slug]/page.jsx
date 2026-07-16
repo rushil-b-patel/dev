@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     const canonical = `${SITE_URL}/blog/${post.slug}`;
     return {
         title: post.title,
-        description: post.description || `${post.title} — ${SITE_NAME}`,
+        description: post.description || `${post.title} - ${SITE_NAME}`,
         authors: [{ name: SITE_NAME, url: SITE_URL }],
         alternates: { canonical },
         openGraph: { title: post.title, description: post.description || post.title, url: canonical, type: "article", publishedTime: post.date, authors: [SITE_NAME] },

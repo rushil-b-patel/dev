@@ -159,11 +159,11 @@ Critical paths ← never shed if possible
 Many products expose one knob. OpenAI exposes several in parallel (e.g. requests per minute/day, tokens per minute/day, images per minute). Whichever you hit first wins they are independent guards.
 
 ```text
-RPM — requests per minute
-RPD — requests per day
-TPM — tokens per minute
-TPD — tokens per day
-IPM — images per minute
+RPM - requests per minute
+RPD - requests per day
+TPM - tokens per minute
+TPD - tokens per day
+IPM - images per minute
 ```
 
 Requests and tokens measure different costs: a request is a network and concurrency unit; a token is compute. A single huge request might pass an RPM check but fail TPM. Designing limits for both closes gaps a single metric would miss.

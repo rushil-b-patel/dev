@@ -5,7 +5,7 @@ import { getPostBySlug, getAllSlugs, formatPostDate } from "@/lib/blog";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Blog post — Rushil Patel";
+export const alt = "Blog post - Rushil Patel";
 
 export function generateStaticParams() {
     return getAllSlugs().map((slug) => ({ slug }));

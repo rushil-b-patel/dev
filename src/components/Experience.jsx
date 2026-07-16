@@ -3,18 +3,18 @@ import { useState } from "react";
 import { FiChevronDown, FiExternalLink } from "react-icons/fi";
 
 const experiences = [
-    { title: "Software Developer Engineer", company: "Odoo", period: "Jul 2025 — Present", current: true, techStack: ["Javascript", "Python", "XML", "PSQL", "jQuery", "SCSS"], description: [
+    { title: "Software Developer Engineer", company: "Odoo", period: "Jul 2025 - Present", current: true, techStack: ["Javascript", "Python", "XML", "PSQL", "jQuery", "SCSS"], description: [
         { text: "Built 15+ production features for Odoo Website Builder." },
         { text: "Built query-param form prefill with multi-form support via unique form-ids.", url: "https://github.com/odoo/odoo/pull/264921" },
         { text: "Integrated Google Maps Places API & AdvancedMarkerElement.", url: "https://github.com/odoo/odoo/pull/242765" },
         { text: "Optimized SEO, templates, static assets & component lifecycles for faster page loads." },
         { text: "Added breadcrumb support in the website editor.", url: "https://github.com/odoo/odoo/pull/224247" },
     ] },
-    { title: "Software Developer Intern", company: "Odoo", period: "Jan 2025 — Jun 2025", current: false, techStack: ["Javascript", "Python", "XML", "PSQL", "SCSS"], description: [
-        { text: "Built Real Estate module end-to-end — models, views, controllers, actions & PDF reports." },
+    { title: "Software Developer Intern", company: "Odoo", period: "Jan 2025 - Jun 2025", current: false, techStack: ["Javascript", "Python", "XML", "PSQL", "SCSS"], description: [
+        { text: "Built Real Estate module end-to-end models, views, controllers, actions & PDF reports." },
         { text: "Learned full Odoo stack: ORM, QWeb, XML views, access rights, server actions & OWL." },
     ] },
-    { title: "Frontend Developer Intern", company: "Codentic Software", period: "May 2023 — Jun 2023", current: false, techStack: ["Next.js", "React", "Tailwind", "Bootstrap", "Git"], description: [
+    { title: "Frontend Developer Intern", company: "Codentic Software", period: "May 2023 - Jun 2023", current: false, techStack: ["Next.js", "React", "Tailwind", "Bootstrap", "Git"], description: [
         { text: "Built dynamic, responsive UIs with React." },
         { text: "Identified and fixed front-end bugs for smoother UX." },
     ] },

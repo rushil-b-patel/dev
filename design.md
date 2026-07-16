@@ -1,18 +1,18 @@
-# Design — rushilpatel.dev
+# Design - rushilpatel.dev
 
 A locked design system for this site. Every page redesign reads this file before
-emitting code. Extend or amend this file when the system needs to grow — do not
+emitting code. Extend or amend this file when the system needs to grow - do not
 regenerate per page.
 
 ## Genre
 
-editorial — minimal personal document. Dense, quiet, typography-led.
+editorial - minimal personal document. Dense, quiet, typography-led.
 
 ## Macrostructure family
 
-- Home: Long Document — single narrow column (`max-w-2xl`), dashed section
+- Home: Long Document - single narrow column (`max-w-2xl`), dashed section
   dividers, no hero; the intro block leads.
-- Content pages (blog index, posts, 404): Long Document — same column, prose-led.
+- Content pages (blog index, posts, 404): Long Document - same column, prose-led.
 - There are no marketing pages. No enrichment anywhere: typography only.
 
 ## Theme
@@ -33,14 +33,14 @@ anchor; saffron is the only decorative accent.
 
 Tailwind bridge (`@theme inline` in `globals.css`): `rule`, `surface`, `saffron`
 are usable as `border-rule`, `divide-rule`, `bg-surface`, `text-saffron`, etc.
-Never hardcode `gray-*` / `neutral-*` for borders or surfaces — use the tokens.
+Never hardcode `gray-*` / `neutral-*` for borders or surfaces - use the tokens.
 Semantic exception: GitHub PR status colours (purple/green/red) in Work.
 
 ## Typography
 
-- Display: Geist, 600–700 — all `h1`–`h3` (set globally in `globals.css`)
+- Display: Geist, 600–700 - all `h1`–`h3` (set globally in `globals.css`)
 - Body: Google Sans, 400
-- Mono: Tailwind default mono stack — dates, labels, code, quiet metadata
+- Mono: Tailwind default mono stack - dates, labels, code, quiet metadata
 - Blog prose: Geist body (`font-geist` on the article)
 
 ## Spacing
@@ -50,17 +50,17 @@ Tailwind's default 4-pt scale. Section rhythm: `mt-10` between home sections,
 
 ## Motion
 
-- Named transition properties only — `transition-all` is banned.
+- Named transition properties only - `transition-all` is banned.
 - Durations 200–500 ms on Tailwind's default easing; never browser `ease`.
 - `prefers-reduced-motion: reduce` collapses all animation/transition sitewide
   (global block in `globals.css`); JS smooth-scroll checks the media query.
-- Animate `transform`/`opacity`/`filter` — never padding or other layout
+- Animate `transform`/`opacity`/`filter` - never padding or other layout
   (exception: the `grid-template-rows` 0fr/1fr accordion technique).
 - Focus rings never animate.
 
 ## Microinteractions stance
 
-- Silent success — the copy button swaps its icon; no toasts.
+- Silent success - the copy button swaps its icon; no toasts.
 - One hover signal per element: a colour shift or a small translate. Never
   scale + colour + radius together.
 - Anything revealed on hover must also be visible at rest or reachable via
@@ -84,7 +84,7 @@ round caps, `currentColor`.
 - The `max-w-2xl` column and dashed-divider rhythm.
 - Geist display + Google Sans body + mono metadata.
 - Saffron as the only accent (≤ 5 % per viewport) and the focus ring.
-- Token names — pages reference tokens, never raw values.
+- Token names - pages reference tokens, never raw values.
 
 ## What pages MAY differ on
 
