@@ -22,7 +22,7 @@ export default function Intro() {
             </div>
             <p className="mt-8 md:mt-0">
                 Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> (Building &amp; Optimizing the website builder).<br />
-                JS, Python, Vite, Next.js — whatever ships the features.<br />
+                JS, Python, Vite, Next.js - whatever ships the features.<br />
                 Into servers, infra, systems that scale, and AI that builds.<br />
                 Learning, building, and improving <b>: )</b>
             </p>

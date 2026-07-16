@@ -3,7 +3,7 @@ import { FiExternalLink, FiBookOpen, FiGithub } from "react-icons/fi";
 
 const projectsList = [
     { title: "BuildFlow", description: "Build & deploy vite/react apps end-to-end with isolated upload and deploy servers.", techStack: ["Node.js", "Cloudflare", "Redis"], liveLink: "https://buildflow.rushilpatel.dev", codeLink: "https://github.com/rushil-b-patel/Build-Flow" },
-    { title: "Tracerate", description: "CLI tool — speed, ping, jitter, bufferbloat, latency & DNS info in one shot.", techStack: ["Python", "Pytest"], liveLink: "https://pypi.org/project/tracerate", codeLink: "https://github.com/rushil-b-patel/tracerate", blogLink: "/blog/tracerate" },
+    { title: "Tracerate", description: "CLI tool - speed, ping, jitter, bufferbloat, latency & DNS info in one shot.", techStack: ["Python", "Pytest"], liveLink: "https://pypi.org/project/tracerate", codeLink: "https://github.com/rushil-b-patel/tracerate", blogLink: "/blog/tracerate" },
     { title: "Whisper", description: "Anonymous discussion platform for students to share opinions privately.", techStack: ["React", "Node.js", "MongoDB", "Tailwind"], liveLink: "https://whisper.rushilpatel.dev/", codeLink: "https://github.com/rushil-b-patel/Whisper" },
     { title: "ChatGPT Prompt Indexer", description: "Browser extension to index & search your ChatGPT prompts.", techStack: ["JavaScript", "CSS", "HTML"], liveLink: null, codeLink: "https://github.com/rushil-b-patel/chatGPT-prompt-indexer" },
 ];
