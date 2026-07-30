@@ -14,22 +14,23 @@ function FiStackOverflow(props) {
 }
 
 const links = [
-    { href: "mailto:rushil13579@gmail.com", label: "Email", Icon: FiMail },
-    { href: "https://www.x.com/rushil_b_patel", label: "X", Icon: FiTwitter },
-    { href: "https://www.linkedin.com/in/rushil-b-patel", label: "LinkedIn", Icon: FiLinkedin },
-    { href: "https://www.github.com/rushil-b-patel", label: "GitHub", Icon: FiGithub },
-    { href: "https://stackoverflow.com/users/25128671/rushil-patel", label: "Stack Overflow", Icon: FiStackOverflow },
+    { href: "mailto:rushil13579@gmail.com", label: "Email", Icon: FiMail, brand: "#EA4335" },
+    { href: "https://www.x.com/rushil_b_patel", label: "X", Icon: FiTwitter, brand: "#1DA1F2" },
+    { href: "https://www.linkedin.com/in/rushil-b-patel", label: "LinkedIn", Icon: FiLinkedin, brand: "#0A66C2", brandDark: "#70B5F9" },
+    { href: "https://www.github.com/rushil-b-patel", label: "GitHub", Icon: FiGithub, brand: "#181717", brandDark: "#E6EDF3" },
+    { href: "https://stackoverflow.com/users/25128671/rushil-patel", label: "Stack Overflow", Icon: FiStackOverflow, brand: "#F48024" },
 ];
 
 export default function SocialMedia() {
     return (
         <div className="flex items-center gap-4 text-app-muted">
-            {links.map(({ href, label, Icon }) => (
+            {links.map(({ href, label, Icon, brand, brandDark }) => (
                 <a
                     key={label}
                     href={href}
                     aria-label={label}
-                    className="transition-colors duration-200 hover:text-saffron"
+                    style={{ "--brand-light": brand, "--brand-dark": brandDark ?? brand }}
+                    className="social-brand transition-colors duration-200 hover:text-[var(--brand)]"
                     {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                     <Icon size={16} />

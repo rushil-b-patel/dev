@@ -6,7 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
 import "highlight.js/styles/github-dark.css";
-import { formatPostDate, textToId } from "@/lib/blog-utils";
+import { formatPostDate, textToId } from "@/lib/utils";
 import TableOfContents from "@/components/TableOfContents";
 import ImageLightbox from "@/components/ImageLightbox";
 import QueryDemo from "@/components/QueryDemo";

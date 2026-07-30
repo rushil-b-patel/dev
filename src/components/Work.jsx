@@ -2,23 +2,9 @@
 import { useState } from "react";
 import Pagination from "./Pagination";
 
-const prs = [
-    { title: "Breadcrumb support in website editor", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/224247", status: "merged" },
-    { title: "Prefill form fields via query params", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/264921", status: "open" },
-    { title: "Multi-select dropdown options", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/255671" , status: "open" },
-    { title: "Dynamic snippet carousels for blogs, events & appointments", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/238099", status: "open" },
-    { title: "Migrate Google Maps to Places API & AdvancedMarkerElement", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/242765", status: "open" },
-    { title: "Lazy-load dynamic snippets", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/215388", status: "open" },
-    { title: "Refactor WebsiteUrlPicker component", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/226324", status: "open" },
-    { title: "Icon List snippet with FontAwesome support", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/225823", status: "open" },
-    { title: "Icon inner snippet", repo: "odoo/odoo", url: "https://github.com/odoo/odoo/pull/214112", status: "merged" },
-];
-
 const PAGE_SIZE = 5;
-const statusLabel = { merged: "merged", open: "open", closed: "closed" };
-const statusColor = { merged: "text-purple-500", open: "text-green-500", closed: "text-red-500" };
 
-export default function Work() {
+export default function Work({ prs }) {
     const [page, setPage] = useState(0);
     const totalPages = Math.ceil(prs.length / PAGE_SIZE);
     const visible = prs.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
@@ -38,7 +24,6 @@ export default function Work() {
                         </div>
                         <div className="flex items-center gap-3 shrink-0 ml-4">
                             <span className="text-xs font-mono text-app-muted hidden md:inline">{pr.repo}</span>
-                            <span className={`text-xs font-mono ${statusColor[pr.status]} hidden sm:inline`}>{statusLabel[pr.status]}</span>
                         </div>
                     </a>
                 ))}

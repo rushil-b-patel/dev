@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { formatPostDate } from "@/lib/blog-utils";
+import { formatPostDate } from "@/lib/utils";
 import Pagination from "./Pagination";
 
 const PAGE_SIZE = 3;
