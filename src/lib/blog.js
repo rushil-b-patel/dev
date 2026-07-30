@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
-import { textToId, formatPostDate } from "./blog-utils.js";
+import { textToId, formatPostDate } from "./utils.js";
 
 export { textToId, formatPostDate };
 

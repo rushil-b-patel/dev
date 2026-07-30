@@ -1,5 +1,3 @@
-/* Hallmark · genre: editorial · macrostructure: Long Document (single-column) · design-system: design.md · designed-as-app
- * theme: custom (warm paper · saffron accent) · pre-emit critique: P4 H4 E4 S4 R5 V4 */
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -75,6 +73,13 @@ h3 {
     html {
         scroll-behavior: auto !important;
     }
+}
+
+.social-brand {
+    --brand: var(--brand-light);
+}
+html.dark .social-brand {
+    --brand: var(--brand-dark);
 }
 
 @utility text-app-primary {

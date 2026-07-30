@@ -20,12 +20,14 @@ export default function Intro() {
                     <Image src="/profile.jpg" alt="Rushil" width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500" priority />
                 </div>
             </div>
-            <p className="mt-8 md:mt-0">
-                Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> (Building &amp; Optimizing the website builder).<br />
-                JS, Python, Vite, Next.js - whatever ships the features.<br />
-                Into servers, infra, systems that scale, and AI that builds.<br />
-                Learning, building, and improving <b>: )</b>
-            </p>
+            <div className="flex flex-col gap-1.5 mt-8 md:mt-0">
+                <p>
+                    Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> - Building & the tools people use to build their things.
+                </p>
+                <p>JS, Python, whatever ships the feature.</p>
+                <p>Curious about system servers, databases & AI that builds.</p>
+                <p>Breaking, Scaling, & Compounding <b>: )</b></p>
+            </div>
         </div>
     );
 }
