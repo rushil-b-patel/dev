@@ -58,6 +58,8 @@ Abu Dhabi is by far the biggest, covering more than three-quarters of the countr
 
 By tradition, the ruler of Abu Dhabi is the president of the UAE. But the president is chosen by a council of all seven rulers, and big decisions need five of the seven votes, including both Abu Dhabi and Dubai. So Abu Dhabi leads, but it can't decide alone.
 
+![UAE Map](/Blogs/uae-map.jpg)
+
 ## 8. Small things I noticed
 
 - **Food:** I tried khaboos (also spelled khubz), the local flatbread. It's like naan, but its own thing.
