@@ -24,6 +24,12 @@ export default function sitemap() {
             changeFrequency: "weekly",
             priority: 0.8,
         },
+        {
+            url: `${SITE_URL}/frames`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
         ...blogUrls,
     ];
 }
