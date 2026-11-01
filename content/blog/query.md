@@ -25,7 +25,7 @@ The wire format: a `QUERY` request with `Content-Type` describing the query, and
 
 ```bash
 QUERY /api/cities HTTP/1.1
-Host: www.rushilpatel.dev
+Host: www.rushilpatel.tech
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
 
@@ -41,14 +41,14 @@ Content-Type: application/json
 [{"name": "Ahmedabad", "district": "Ahmedabad"}, {"name": "Anand", "district": "Anand"}]
 ```
 
-Try it yourself - edit the query below and hit send to this [api](https://www.rushilpatel.dev/api/cities).
+Try it yourself - edit the query below and hit send to this [api](https://www.rushilpatel.tech/api/cities).
 
 [query-demo]
 
 Or from your terminal:
 
 ```bash
-curl -i -X QUERY https://www.rushilpatel.dev/api/cities \
+curl -i -X QUERY https://www.rushilpatel.tech/api/cities \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'select=name,district&limit=2&match="name=S*"'
 ```
