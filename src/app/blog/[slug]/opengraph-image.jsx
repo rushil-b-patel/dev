@@ -35,7 +35,7 @@ export default async function Image({ params }) {
                     <div style={{ width: 64, height: 9, borderRadius: 4.5, backgroundColor: "#3b82f6", marginTop: 34 }} />
                 </div>
                 <div style={{ display: "flex", fontSize: 27, color: "#a1a1aa" }}>
-                    {post ? `rushilpatel.dev · ${formatPostDate(post.date, "long")} · ${post.readingMinutes} min read` : "rushilpatel.dev"}
+                    {post ? `rushilpatel.tech · ${formatPostDate(post.date, "long")} · ${post.readingMinutes} min read` : "rushilpatel.tech"}
                 </div>
             </div>
         ),

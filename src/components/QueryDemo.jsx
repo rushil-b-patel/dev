@@ -16,7 +16,7 @@ export default function QueryDemo() {
     const [limit, setLimit] = useState(3);
     const [response, setResponse] = useState(null);
     const [sending, setSending] = useState(false);
-    const [host, setHost] = useState("rushilpatel.dev");
+    const [host, setHost] = useState("rushilpatel.tech");
 
     useEffect(() => setHost(window.location.host), []);
 

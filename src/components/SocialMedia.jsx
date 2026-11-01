@@ -14,7 +14,7 @@ function FiStackOverflow(props) {
 }
 
 const links = [
-    { href: "mailto:rushil13579@gmail.com", label: "Email", Icon: FiMail, brand: "#EA4335" },
+    { href: "mailto:rushilpatel.eng@gmail.com", label: "Email", Icon: FiMail, brand: "#EA4335" },
     { href: "https://www.x.com/rushil_b_patel", label: "X", Icon: FiTwitter, brand: "#1DA1F2" },
     { href: "https://www.linkedin.com/in/rushil-b-patel", label: "LinkedIn", Icon: FiLinkedin, brand: "#0A66C2", brandDark: "#70B5F9" },
     { href: "https://www.github.com/rushil-b-patel", label: "GitHub", Icon: FiGithub, brand: "#181717", brandDark: "#E6EDF3" },
