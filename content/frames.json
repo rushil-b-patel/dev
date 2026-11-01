@@ -1,6 +1,7 @@
 [
   {
-    "id": "49922e8b821f",
+    "id": "384c0d870d2e",
+    "folder": "",
     "w": 2268,
     "h": 4032,
     "sizes": [
@@ -9,40 +10,13 @@
       2560,
       3840
     ],
-    "alt": "Mirrored triangular panels reflecting swirling blue and teal light across a glossy black floor",
-    "place": "",
-    "date": "Oct 2026"
+    "taken": "2023-01-17T15:56:22",
+    "alt": "A person in a cap and black T-shirt outside an old shop with a hand-painted Gujarati sign",
+    "place": ""
   },
   {
-    "id": "b65bef37bbdd",
-    "w": 2268,
-    "h": 4032,
-    "sizes": [
-      800,
-      1600,
-      2560,
-      3840
-    ],
-    "alt": "Translucent orange jellyfish drifting through dark blue water",
-    "place": "Dubai",
-    "date": "Oct 2026"
-  },
-  {
-    "id": "fa3fdb98ea00",
-    "w": 2268,
-    "h": 4032,
-    "sizes": [
-      800,
-      1600,
-      2560,
-      3840
-    ],
-    "alt": "A white yacht on deep blue water at night, with the Ain Dubai wheel and pink-lit canopies behind it",
-    "place": "Dubai",
-    "date": "Oct 2026"
-  },
-  {
-    "id": "ae387e641846",
+    "id": "61b102dc5f85",
+    "folder": "",
     "w": 4032,
     "h": 2268,
     "sizes": [
@@ -51,12 +25,688 @@
       2560,
       3840
     ],
-    "alt": "The Ain Dubai wheel at night above a waterfront of pink-lit, mushroom-shaped canopies",
-    "place": "Dubai",
-    "date": "Oct 2026"
+    "taken": "2023-02-13T15:11:25",
+    "alt": "Mirror selfie of two people, one holding a phone and the other making a peace sign",
+    "place": ""
+  },
+  {
+    "id": "9137ddf653f2",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-03-30T18:17:56",
+    "alt": "Apartment buildings under a bright, cloud-filled sky",
+    "place": "Anand"
+  },
+  {
+    "id": "a939de957bf6",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-05-25T23:24:12",
+    "alt": "A tiny crescent moon in an almost completely black night sky",
+    "place": ""
+  },
+  {
+    "id": "5e02f6024837",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-06-02T14:37:32",
+    "alt": "An ornate carved sandstone temple under a blue sky, with two visitors at its railing",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "e38c59e8582d",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-06-22T19:46:00",
+    "alt": "A thin crescent moon in a dusky sky above the dark edge of a building",
+    "place": ""
+  },
+  {
+    "id": "75321ef66b7a",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-08-26T10:08:28",
+    "alt": "A pink water lily among broad green lily pads",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "423d94416975",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-10-12T18:30:11",
+    "alt": "Strings of lights and colourful bunting converging above a large crowd at night",
+    "place": ""
+  },
+  {
+    "id": "8d3d2590df55",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-10-23T18:21:48",
+    "alt": "The Gateway of India, the Taj Mahal Palace hotel and a lit tower across the water at dusk",
+    "place": "Mumbai"
+  },
+  {
+    "id": "f6215b183bdc",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-12-19T18:11:44",
+    "alt": "A small orange boat on a lake at sunset, with lit waterfront buildings behind it",
+    "place": "Udaipur"
+  },
+  {
+    "id": "06efe5e58351",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-12-21T14:19:09",
+    "alt": "A neatly trimmed hedge on a hilltop terrace under a wide blue sky",
+    "place": "Udaipur"
+  },
+  {
+    "id": "730d6d52549f",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-12-21T14:45:07",
+    "alt": "A white hilltop palace behind a leaning tree and trimmed hedges under a hazy sky",
+    "place": "Udaipur"
+  },
+  {
+    "id": "2e84345abd55",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-12-21T18:05:16",
+    "alt": "A pink sunset over a lake, with lit palaces and hills in the distance",
+    "place": "Udaipur"
+  },
+  {
+    "id": "1463d9b2b2ef",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2023-12-21T18:09:58",
+    "alt": "Streaks of pink and grey sunset cloud over a calm lake with hills and lit buildings",
+    "place": "Udaipur"
+  },
+  {
+    "id": "c365442a49b1",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2024-12-17T13:36:48",
+    "alt": "A calm blue lake with a rocky island and surrounding hills, seen from a rocky lookout",
+    "place": "Udaipur"
+  },
+  {
+    "id": "a1b8dad161cf",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2024-12-17T14:24:50",
+    "alt": "A long white staircase climbing a steep, rocky green hillside",
+    "place": "Udaipur"
+  },
+  {
+    "id": "6f75f258397d",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2024-12-17T16:03:48",
+    "alt": "A dim café with hanging vines and bulbs, a neon sign and a checkered floor",
+    "place": "Udaipur"
+  },
+  {
+    "id": "3d42d38af377",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-03-15T18:20:53",
+    "alt": "A row of tall silhouetted trees at sunset under a sky of scattered clouds",
+    "place": ""
+  },
+  {
+    "id": "99bedce47d25",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-09-22T21:44:30",
+    "alt": "A crowd beneath hanging red and white decorations in a festival hall",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "1981ee065bc9",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-09-30T22:46:41",
+    "alt": "Hundreds of golden bells and white tassels hanging above a festival crowd",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "dd093559a514",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-10-01T01:18:45",
+    "alt": "A crowd under hanging fabric banners lit in deep red",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "171ed546c891",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-10-28T20:55:15",
+    "alt": "A glass-fronted building at night with a glowing sign and an arch of fairy lights",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "8dedca36f911",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-11-15T21:19:40",
+    "alt": "Colourful patterned fabric panels radiating from a central point, seen from below",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "90c326c6cf44",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-11-15T21:29:57",
+    "alt": "A visitor seen from behind, looking at an exhibition wall of food illustrations and text",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "0ab44e3433b0",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-12-19T20:58:58",
+    "alt": "A packed cricket stadium at night under floodlights, seen from the upper stands",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "7d8f07020b4f",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2025-12-22T20:04:45",
+    "alt": "Glowing ring lights wrapped in hanging greenery on a dark ceiling",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "ded9d88d4a4a",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-01-13T18:34:31",
+    "alt": "A lit stage at night with large screens showing the CHARUSAT 15th convocation",
+    "place": ""
+  },
+  {
+    "id": "988a730f8295",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-02-07T20:37:00",
+    "alt": "A garden at night with a small tree, beds of pink flowers and a pond",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "c1d77938778b",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-03-27T21:31:21",
+    "alt": "A wall artwork of a woman's face with a plant-covered hairstyle, below a hanging planter",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "d6a631c21201",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-04-09T11:00:40",
+    "alt": "An extreme close-up of a dark device with speaker holes and small round buttons",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "5cfd2fdee05f",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-04-30T19:12:08",
+    "alt": "A cricket match seen from the stands, with players on a bright green field and a full stadium",
+    "place": "Ahmedabad"
+  },
+  {
+    "id": "dd70ac621857",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-05-17T08:32:46",
+    "alt": "A carved, multi-storey temple complex and spire above a busy street",
+    "place": ""
+  },
+  {
+    "id": "d0cadafaa6f7",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-05-17T08:33:12",
+    "alt": "Ornate multi-storey temple buildings around a busy courtyard under a blue sky",
+    "place": ""
+  },
+  {
+    "id": "ee1363cb90d5",
+    "folder": "",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-06-22T19:12:28",
+    "alt": "A sunset through an office window, with potted plants on the sill and a flyover outside",
+    "place": "Gandhinagar"
+  },
+  {
+    "id": "3ca0dfb99ba3",
+    "folder": "",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-06-27T00:25:39",
+    "alt": "A dark, modern restaurant interior with hanging lamps and tables",
+    "place": ""
+  },
+  {
+    "id": "1b71a32bd068",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-09-26T06:32:39",
+    "alt": "A red aeroplane wingtip above a sea of clouds at dawn",
+    "place": ""
+  },
+  {
+    "id": "bf366208587c",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-02T16:55:02",
+    "alt": "Glass towers beyond palm trees, fountains and an outdoor table and chairs",
+    "place": "Abu Dhabi"
+  },
+  {
+    "id": "5f8e597e6aed",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-05T11:04:33",
+    "alt": "A traditional stone wind tower above an old arched building under a blue sky",
+    "place": "Dubai"
+  },
+  {
+    "id": "39421c003271",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-05T11:06:43",
+    "alt": "A wooden dhow on a wide creek, with city office buildings behind it",
+    "place": "Dubai"
+  },
+  {
+    "id": "ace3fafd2916",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-05T11:55:55",
+    "alt": "A copper-coloured modern building and a tall street lamp against a grey sky",
+    "place": "Dubai"
+  },
+  {
+    "id": "e74b4fa11dc1",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-05T16:06:13",
+    "alt": "A hazy aerial view of a long avenue lined with apartment blocks beside the sea",
+    "place": "Dubai"
+  },
+  {
+    "id": "3db2aa266b65",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-05T16:13:08",
+    "alt": "A glass skyscraper tapering upward, seen from directly below against a blue sky",
+    "place": "Dubai"
+  },
+  {
+    "id": "672d7ed3bff8",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-07T15:26:07",
+    "alt": "Hundreds of orange jellyfish filling a dark blue aquarium tank",
+    "place": "Dubai"
+  },
+  {
+    "id": "3800221fdf1e",
+    "folder": "UAE",
+    "w": 4032,
+    "h": 2268,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-07T18:45:28",
+    "alt": "High-rise towers and moored yachts reflected in a marina at night",
+    "place": "Dubai"
+  },
+  {
+    "id": "ca649e503d68",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-07T19:56:26",
+    "alt": "Dark high-rise towers with scattered lit windows against a night sky",
+    "place": "Dubai"
+  },
+  {
+    "id": "61b833cd563a",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-07T22:17:27",
+    "alt": "A round, ring-shaped tower lit in purple, reflected in dark water at night",
+    "place": "Dubai"
+  },
+  {
+    "id": "2be027279a6f",
+    "folder": "UAE",
+    "w": 2268,
+    "h": 4032,
+    "sizes": [
+      800,
+      1600,
+      2560,
+      3840
+    ],
+    "taken": "2026-10-08T11:32:48",
+    "alt": "A large red water wheel sculpture in a garden plaza with flower beds and benches",
+    "place": "Dubai"
   },
   {
     "id": "047ed36c8ad5",
+    "folder": "UAE",
     "w": 2268,
     "h": 4032,
     "sizes": [
@@ -65,22 +715,8 @@
       2560,
       3840
     ],
+    "taken": "2026-10-08T11:38:41",
     "alt": "A cottage covered in plants and flowers, with water falling into a clear pond under a blue sky",
-    "place": "Dubai",
-    "date": "Oct 2026"
-  },
-  {
-    "id": "dd0464a22c2c",
-    "w": 4032,
-    "h": 2268,
-    "sizes": [
-      800,
-      1600,
-      2560,
-      3840
-    ],
-    "alt": "An Emirates airliner covered in plants and flowers, behind a field of orange and yellow blooms",
-    "place": "Dubai",
-    "date": "Oct 2026"
+    "place": "Dubai"
   }
 ]

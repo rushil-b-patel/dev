@@ -1,4 +1,5 @@
 import { getAllPosts } from "@/lib/blog";
+import { folders } from "@/lib/frames";
 import { SITE_URL } from "@/config/site";
 
 export default function sitemap() {
@@ -30,6 +31,12 @@ export default function sitemap() {
             changeFrequency: "monthly",
             priority: 0.8,
         },
+        ...folders.map(({ slug }) => ({
+            url: `${SITE_URL}/frames/${slug}`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.6,
+        })),
         ...blogUrls,
     ];
 }

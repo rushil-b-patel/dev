@@ -1,6 +1,6 @@
 import ContactSheet from "@/components/ContactSheet";
 import { SITE_URL } from "@/config/site";
-import frames from "../../../content/frames.json";
+import { folders, looseFrames } from "@/lib/frames";
 
 export const metadata = {
     title: "Frames",
@@ -9,9 +9,6 @@ export const metadata = {
 };
 
 export default function FramesPage() {
-    return (
-        <div className="relative left-1/2 w-[calc(100vw-2rem)] max-w-6xl -translate-x-1/2 sm:w-[calc(100vw-3rem)]">
-            <ContactSheet frames={frames} />
-        </div>
-    );
+    const tiles = folders.map(({ frames, ...folder }) => ({ ...folder, cover: frames[0], count: frames.length }));
+    return <ContactSheet frames={looseFrames} folders={tiles} />;
 }
