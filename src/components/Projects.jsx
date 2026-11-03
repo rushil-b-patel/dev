@@ -3,7 +3,7 @@ import { FiExternalLink, FiBookOpen, FiGithub } from "react-icons/fi";
 
 const projectsList = [
     { title: "BuildFlow", description: "Build & deploy vite/react apps end-to-end with isolated upload and deploy servers.", techStack: ["Node.js", "Cloudflare", "Redis"], liveLink: "https://buildflow.rushilpatel.tech", codeLink: "https://github.com/rushil-b-patel/Build-Flow" },
-    { title: "Tracerate", description: "CLI tool - speed, ping, jitter, bufferbloat, latency & DNS info in one shot.", techStack: ["Python", "Pytest"], liveLink: "https://pypi.org/project/tracerate", codeLink: "https://github.com/rushil-b-patel/tracerate", blogLink: "/blog/tracerate" },
+    { title: "Tracerate", description: "CLI tool - speed, ping, jitter, bufferbloat, latency & DNS info in one shot.", techStack: ["Python", "Pytest"], liveLink: "https://pypi.org/project/tracerate", codeLink: "https://github.com/rushil-b-patel/tracerate", writingLink: "/writing/tracerate" },
     { title: "Whisper", description: "Anonymous discussion platform for students to share opinions privately.", techStack: ["React", "Node.js", "MongoDB", "Tailwind"], liveLink: "https://whisper.rushilpatel.tech/", codeLink: "https://github.com/rushil-b-patel/Whisper" },
     { title: "ChatGPT Prompt Indexer", description: "Browser extension to index & search your ChatGPT prompts.", techStack: ["JavaScript", "CSS", "HTML"], liveLink: null, codeLink: "https://github.com/rushil-b-patel/chatGPT-prompt-indexer" },
 ];
@@ -18,7 +18,7 @@ export default function Projects() {
                         <div className="flex items-baseline justify-between gap-4">
                             <h3 className="text-base font-semibold text-app-primary">{project.title}</h3>
                             <div className="flex items-center gap-3 shrink-0 text-app-muted">
-                                {project.blogLink && <Link href={project.blogLink} className="link-app" title="Read the blog" aria-label={`Read the ${project.title} blog`}><FiBookOpen size={15} /></Link>}
+                                {project.writingLink && <Link href={project.writingLink} className="link-app" title="Read the write-up" aria-label={`Read the ${project.title} write-up`}><FiBookOpen size={15} /></Link>}
                                 {project.liveLink && <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="link-app" aria-label={`${project.title} live`}><FiExternalLink size={15} /></a>}
                                 {project.codeLink && <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="link-app" aria-label={`${project.title} source`}><FiGithub size={15} /></a>}
                             </div>

@@ -1,6 +1,7 @@
 ---
 title: "How UPI works, and who pays for it"
 date: "2026-11-02"
+cover: "/Writing/covers/upi.png"
 description: "Follow ₹500 through UPI, from your phone to RBI: why PhonePe needs a bank, why banks settle hours later, and who pays for a payment that costs you nothing."
 ---
 
@@ -35,7 +36,7 @@ Email is a good way to picture it. You can write from Gmail to an Outlook addres
 
 ## 3. How UPI actually works !
 
-![UPI Diagram](/Blogs/upi.png)
+![UPI Diagram](/Writing/upi.png)
 
 1. **You send ₹500.** In PhonePe, you enter your friend's UPI ID, the amount and your UPI PIN.
 2. **PhonePe passes the request to its sponsor bank, Axis.** The app can't connect to UPI by itself.
@@ -96,7 +97,7 @@ UPI runs [10 settlement cycles for payments, plus 2 for disputes](https://simpli
 
 Batching works because of netting. Payments flow in both directions all day, and much of that cancels out (like a simplify dept in splitwise).
 
-![upi-settlement](/Blogs/upi2.png)
+![upi-settlement](/Writing/upi2.png)
 
 That is how UPI feels instant. The messages are real-time, while the money moves in batches. The trade-off is that a bank spends part of the day having credited money it's still waiting to receive.
 
