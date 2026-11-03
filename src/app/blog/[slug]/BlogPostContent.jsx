@@ -42,9 +42,19 @@ export default function BlogPostContent({ post, headings }) {
     let imgIndex = 0;
 
     const components = {
-        a: ({ href, children, node, ...rest }) => {
+        a: ({ href, title, children, node, ...rest }) => {
             if (href?.startsWith("/")) return <Link href={href} className="blog-link" {...rest}>{children}</Link>;
-            return <a href={href} target="_blank" rel="noopener noreferrer" className="blog-link" {...rest}>{children}</a>;
+            // [term](# "definition") is a tooltip with nothing to click through to.
+            const link = href === "#"
+                ? <span tabIndex={0} className="cursor-help underline decoration-dotted underline-offset-4">{children}</span>
+                : <a href={href} target="_blank" rel="noopener noreferrer" className="blog-link" {...rest}>{children}</a>;
+            if (!title) return link;
+            return (
+                <span className="group lg:relative">
+                    {link}
+                    <span className="pointer-events-none fixed inset-x-4 bottom-4 z-50 rounded-lg border border-rule bg-surface p-3 text-sm font-normal leading-snug text-app-secondary opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 lg:absolute lg:inset-x-auto lg:bottom-full lg:left-1/2 lg:mb-2 lg:w-max lg:max-w-64 lg:-translate-x-1/2">{title}</span>
+                </span>
+            );
         },
         p: ({ children, node, ...rest }) => {
             const hasImg = node?.children?.some((c) => c.tagName === "img");
