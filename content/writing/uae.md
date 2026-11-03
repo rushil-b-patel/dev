@@ -1,6 +1,7 @@
 ---
 title: "UAE through my lens"
 date: "2026-10-28"
+cover: "/Writing/covers/uae.png"
 description: "My first trip abroad: what I noticed in the UAE, from zebra crossings and cloud seeding to cheap gold and low taxes."
 ---
 
@@ -24,7 +25,7 @@ Both moments say the same thing. Respect here isn't just a value people talk abo
 
 The small public things are planned. There are donation containers beside the road where you can leave old clothes, toys, and books for people in need. Every small sector has its own public park, and the city has a central park with proper public washrooms around it. The gym equipment in that park has a plate on every machine telling you what it's called and which muscle it works. There are mosques around the park and near many buildings.
 
-![park gym equipment plate](/Blogs/park-gym.jpg)
+![park gym equipment plate](/Writing/park-gym.jpg)
 
 None of it is flashy. That's what I liked about it. It tells you that someone thought about everyday life, not just the impressive parts.
 
@@ -58,7 +59,7 @@ Abu Dhabi is by far the biggest, covering more than three-quarters of the countr
 
 By tradition, the ruler of Abu Dhabi is the president of the UAE. But the president is chosen by a council of all seven rulers, and big decisions need five of the seven votes, including both Abu Dhabi and Dubai. So Abu Dhabi leads, but it can't decide alone.
 
-![UAE Map](/Blogs/uae-map.jpg)
+![UAE Map](/Writing/uae-map.jpg)
 
 ## 8. Small things I noticed
 

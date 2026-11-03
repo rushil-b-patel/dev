@@ -1,6 +1,7 @@
 ---
 title: "Tracerate - A CLI tool for Network Diagnostics"
 date: "2026-05-26"
+cover: "/Writing/covers/tracerate.png"
 description: "A CLI tool that goes beyond speed testing. Checking download/upload, ping, jitter, bufferbloat, regional latency, and IP & DNS info."
 ---
 
@@ -10,8 +11,8 @@ Tracerate is a CLI network diagnostic tool that checks download/upload speed, pi
 ## 2. Why I built tracerate ?
 This is what I do when my network goes down in the middle of some work, the first instinct is to usually fire up my browser and open a new tab and search for "speed test" then I go through 1 or 2 sites (usually [fast.com](http://fast.com) or [Measurements lab](https://www.measurementlab.net)), and all I got is plain download/upload speed, no other detail at all. So I thought instead of opening a browser and a new tab, why can't I just check in my terminal (as a developer I'm always in the terminal). So instead of jumping direct to create one, I checked for existing CLI tools. I found one by [Ookla](https://www.speedtest.net/apps/cli) which is good, impressive but heavy weight, and then there's `speedtest-cli` by [speedtest.net](https://github.com/sivel/speedtest-cli) which is kind of archived I guess as that's what the repo says, and btw the output is so plain and again just download/upload speed not much information. So there comes my motivation to get my hands dirty & build a tool for it.
 
-![speedtest by Ookla](/Blogs/speedtest-ookla.png "Speedtest CLI by Ookla")
-![speedtest-cli by speedtest.net](/Blogs/speedtest-cli.png "speedtest-cli by Speedtest.net")
+![speedtest by Ookla](/Writing/speedtest-ookla.png "Speedtest CLI by Ookla")
+![speedtest-cli by speedtest.net](/Writing/speedtest-cli.png "speedtest-cli by Speedtest.net")
 
 ## 3. How I built it ?
 Before jumping to HOW, a big question might have come to your mind, Why did I choose Python? (If you have seen the [codebase](https://github.com/rushil-b-patel/tracerate)) Well it's very simple, because I wanted to practice Python and improve my hands on it. In this AI world no one writes code by bare hand now and I kind of lost my grip in python, actually never had one because I mostly work with JavaScript at work, and also in my personal projects there is less to none Python. So I wanted to indulge more in Python and get my hands on with it.
@@ -99,7 +100,7 @@ A few things rich does for the output:
 
 There's also a small rule-based analyze function in [verdict.py](https://github.com/rushil-b-patel/tracerate/blob/master/tracerate/verdict.py#L30) that looks at all the numbers together and produces one human sentence at the bottom. Like "Packet loss detected, connection is unstable" or "Low bandwidth, ISP speed is the bottleneck" or just "Connection looks healthy". It's nothing fancy, just a stack of ifs, but it saves you from having to interpret 8 numbers yourself when you're already annoyed because your network is misbehaving.
 
-![tracerate output](/Blogs/tracerate.png "Tracerate Output")
+![tracerate output](/Writing/tracerate.png "Tracerate Output")
 
 ### Commands
 

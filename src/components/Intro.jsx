@@ -22,7 +22,7 @@ export default function Intro() {
             </div>
             <div className="flex flex-col gap-1.5 mt-8 md:mt-0">
                 <p>
-                    Engineering at <a href="https://www.odoo.com" className="blog-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> - Building the tools people use to build their website.
+                    Engineering at <a href="https://www.odoo.com" className="writing-link" target="_blank" rel="noopener noreferrer"><b>Odoo</b></a> - Building the tools people use to build their website.
                 </p>
                 <p>JS, Python, Java - whatever ships the feature.</p>
                 <p>Curious about System servers, Databases & AI that builds.</p>

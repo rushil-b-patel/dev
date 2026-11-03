@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import Intro from "@/components/Intro";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
-import BlogSection from "@/components/BlogSection";
+import WritingSection from "@/components/WritingSection";
 import WorkSection from "@/components/WorkSection";
 import Quote from "@/components/Quote";
 const GithubContributions = dynamic(() => import("@/components/GithubContributions"), { loading: () => null });
@@ -28,7 +28,7 @@ export default function Home() {
             <Experience />
             <WorkSection />
             <Projects />
-            <BlogSection />
+            <WritingSection />
             <GithubContributions />
             <Quote />
         </>

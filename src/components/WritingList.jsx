@@ -6,13 +6,13 @@ import Pagination from "./Pagination";
 
 const PAGE_SIZE = 3;
 
-export default function BlogList({ posts }) {
+export default function WritingList({ posts }) {
     const [page, setPage] = useState(0);
     const totalPages = Math.ceil(posts.length / PAGE_SIZE);
     const visible = posts.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
     return (
-        <section id="Blog" className="mt-10">
+        <section id="Writing" className="mt-10">
             <div className="flex items-center justify-between mb-6">
                 <h2 className="text-2xl font-bold">Brain dumps</h2>
                 <Pagination page={page} totalPages={totalPages} onPageChange={setPage} />
@@ -23,7 +23,7 @@ export default function BlogList({ posts }) {
                 <ul className="divide-y divide-dashed divide-rule">
                     {visible.map((post) => (
                         <li key={post.slug} className="group">
-                            <Link href={`/blog/${post.slug}`} className="block py-4">
+                            <Link href={`/writing/${post.slug}`} className="block py-4">
                                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                                     <h3 className="text-base font-semibold text-app-primary group-hover:underline underline-offset-2">{post.title}</h3>
                                     <span className="text-xs text-app-muted tabular-nums shrink-0">{formatPostDate(post.date)} · {post.readingMinutes} min</span>

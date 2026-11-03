@@ -1,12 +1,12 @@
-import { getAllPosts } from "@/lib/blog";
+import { getAllPosts } from "@/lib/writing";
 import { folders } from "@/lib/frames";
 import { SITE_URL } from "@/config/site";
 
 export default function sitemap() {
     const posts = getAllPosts();
 
-    const blogUrls = posts.map((post) => ({
-        url: `${SITE_URL}/blog/${post.slug}`,
+    const writingUrls = posts.map((post) => ({
+        url: `${SITE_URL}/writing/${post.slug}`,
         lastModified: new Date(post.date),
         changeFrequency: "monthly",
         priority: 0.7,
@@ -20,7 +20,7 @@ export default function sitemap() {
             priority: 1.0,
         },
         {
-            url: `${SITE_URL}/blog`,
+            url: `${SITE_URL}/writing`,
             lastModified: new Date(),
             changeFrequency: "weekly",
             priority: 0.8,
@@ -37,6 +37,6 @@ export default function sitemap() {
             changeFrequency: "monthly",
             priority: 0.6,
         })),
-        ...blogUrls,
+        ...writingUrls,
     ];
 }

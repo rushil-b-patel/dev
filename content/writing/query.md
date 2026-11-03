@@ -1,6 +1,7 @@
 ---
 title: "The new HTTP method - QUERY"
 date: "2026-07-07"
+cover: "/Writing/covers/query.png"
 description: "The QUERY method is used to ask the target resource to perform a query operation within the scope of that target resource."
 ---
 

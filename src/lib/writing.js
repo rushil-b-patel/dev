@@ -5,7 +5,7 @@ import { textToId, formatPostDate } from "./utils.js";
 
 export { textToId, formatPostDate };
 
-const BLOG_DIR = path.join(process.cwd(), "content/blog");
+const WRITING_DIR = path.join(process.cwd(), "content/writing");
 
 function parseFrontmatter(raw) {
     const text = raw.replace(/^\uFEFF/, "");
@@ -43,13 +43,13 @@ export function extractHeadings(markdown) {
 }
 
 export function getAllPosts() {
-    const files = fs.readdirSync(BLOG_DIR).filter((f) => f.endsWith(".md") || f.endsWith(".mdx"));
+    const files = fs.readdirSync(WRITING_DIR).filter((f) => f.endsWith(".md") || f.endsWith(".mdx"));
     const posts = files.map((file) => {
-        const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8");
+        const raw = fs.readFileSync(path.join(WRITING_DIR, file), "utf-8");
         const { data, content } = parseFrontmatter(raw);
         if (!data.title || !data.date) return null;
         const slug = data.slug || file.replace(/\.mdx?$/, "");
-        return { slug: String(slug), title: String(data.title), date: String(data.date), description: data.description ? String(data.description) : "", content, readingMinutes: readingMinutes(content) };
+        return { slug: String(slug), title: String(data.title), date: String(data.date), description: data.description ? String(data.description) : "", cover: data.cover ? String(data.cover) : "", content, readingMinutes: readingMinutes(content) };
     }).filter(Boolean);
     return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
-import { getPostBySlug, getAllSlugs, extractHeadings } from "@/lib/blog";
+import { getPostBySlug, getAllSlugs, extractHeadings } from "@/lib/writing";
 import { SITE_NAME, SITE_URL } from "@/config/site";
-import BlogPostContent from "./BlogPostContent";
+import WritingPostContent from "./WritingPostContent";
 
 export function generateStaticParams() {
     return getAllSlugs().map((slug) => ({ slug }));
@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
     if (!post) return { title: "Post not found" };
-    const canonical = `${SITE_URL}/blog/${post.slug}`;
+    const canonical = `${SITE_URL}/writing/${post.slug}`;
     return {
         title: post.title,
         description: post.description || `${post.title} - ${SITE_NAME}`,
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     };
 }
 
-export default async function BlogPost({ params }) {
+export default async function WritingPost({ params }) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
     if (!post) notFound();
@@ -36,13 +36,13 @@ export default async function BlogPost({ params }) {
         datePublished: post.date,
         author: { "@type": "Person", name: SITE_NAME, url: SITE_URL },
         publisher: { "@type": "Person", name: SITE_NAME },
-        mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/writing/${post.slug}` },
     };
 
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-            <BlogPostContent post={post} headings={headings} />
+            <WritingPostContent post={post} headings={headings} />
         </>
     );
 }

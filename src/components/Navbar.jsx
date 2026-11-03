@@ -14,7 +14,7 @@ export default function Navbar() {
             <div className="mx-auto flex h-14 w-full max-w-2xl items-center justify-between">
                 <nav className="flex items-center gap-6" aria-label="Primary">
                     <Link href="/" className={navLinkClass("/")}>Home</Link>
-                    <Link href="/blog" className={navLinkClass("/blog")}>Blog</Link>
+                    <Link href="/writing" className={navLinkClass("/writing")}>Writing</Link>
                     <Link href="/frames" className={navLinkClass("/frames")}>Frames</Link>
                     <a href={RESUME_PDF_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-app-muted transition-colors duration-200 hover:text-app-primary">Resume</a>
                 </nav>
