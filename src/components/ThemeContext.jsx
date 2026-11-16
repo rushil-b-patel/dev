@@ -8,7 +8,7 @@ export function ThemeProvider({ children }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const stored = localStorage.getItem("theme") || "light";
+        const stored = localStorage.getItem("theme") || window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
         setTheme(stored);
         document.documentElement.classList.remove("light", "dark");
         document.documentElement.classList.add(stored);
