@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { FiCopy, FiCheck } from "react-icons/fi";
+import { useEffect, useState } from "react";
+import { FiCopy, FiCheck, FiEye } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
@@ -39,7 +39,15 @@ function Pre({ children, node, ...rest }) {
 
 export default function WritingPostContent({ post, headings }) {
     const [preview, setPreview] = useState(null);
+    const [views, setViews] = useState(null);
     let imgIndex = post.cover ? 1 : 0;
+
+    useEffect(() => {
+        fetch(`/api/views/${post.slug}`, { method: "POST" })
+            .then((res) => (res.ok ? res.json() : null))
+            .then((data) => data && setViews(data.views))
+            .catch(() => {});
+    }, [post.slug]);
 
     const components = {
         a: ({ href, title, children, node, ...rest }) => {
@@ -77,7 +85,12 @@ export default function WritingPostContent({ post, headings }) {
     };
 
     const date = <time dateTime={post.date}>{formatPostDate(post.date, "long")}</time>;
-    const readTime = <span>{post.readingMinutes} min read</span>;
+    const readTime = (
+        <span className="inline-flex items-center gap-3">
+            <span>{post.readingMinutes} min read</span>
+            {views !== null && <span className="inline-flex items-center gap-1"><FiEye aria-hidden />{views.toLocaleString()}<span className="sr-only"> views</span></span>}
+        </span>
+    );
 
     return (
         <>
