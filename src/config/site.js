@@ -1,5 +1,6 @@
 export const SITE_URL = "https://www.rushilpatel.tech";
 export const SITE_NAME = "Rushil Patel";
+export const PERSON_ID = `${SITE_URL}/#person`;
 export const RESUME_PDF_URL = "/resume.pdf";
 export const FRAMES_URL = "https://photos.rushilpatel.tech";
 export const DEFAULT_TITLE = "Rushil Patel | Full Stack Developer";

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getPostBySlug, getAllSlugs, extractHeadings } from "@/lib/writing";
-import { SITE_NAME, SITE_URL } from "@/config/site";
+import { SITE_NAME, SITE_URL, PERSON_ID } from "@/config/site";
 import WritingPostContent from "./WritingPostContent";
 
 export function generateStaticParams() {
@@ -34,8 +34,8 @@ export default async function WritingPost({ params }) {
         headline: post.title,
         description: post.description || undefined,
         datePublished: post.date,
-        author: { "@type": "Person", name: SITE_NAME, url: SITE_URL },
-        publisher: { "@type": "Person", name: SITE_NAME },
+        author: { "@type": "Person", "@id": PERSON_ID, name: SITE_NAME, url: SITE_URL },
+        publisher: { "@id": PERSON_ID },
         mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/writing/${post.slug}` },
     };
 

@@ -6,19 +6,30 @@ import WritingSection from "@/components/WritingSection";
 import WorkSection from "@/components/WorkSection";
 import Quote from "@/components/Quote";
 const GithubContributions = dynamic(() => import("@/components/GithubContributions"), { loading: () => null });
-import { SITE_NAME, SITE_URL, DEFAULT_OG_IMAGE } from "@/config/site";
+import { links as socialLinks } from "@/components/SocialMedia";
+import { SITE_NAME, SITE_URL, PERSON_ID } from "@/config/site";
 
 export default function Home() {
+    // One Person entity (with every profile in sameAs) + a WebSite naming the site, so Google
+    // can tell this Rushil Patel apart from the others and show "Rushil Patel" as the site name.
     const personSchema = {
         "@context": "https://schema.org",
-        "@type": "Person",
-        name: SITE_NAME,
-        url: SITE_URL,
-        image: DEFAULT_OG_IMAGE,
-        jobTitle: "Full Stack Developer",
-        description: "Full Stack Developer specializing in web development, modern JavaScript and Cloud Technologies",
-        sameAs: ["https://github.com/rushil-b-patel", "https://linkedin.com/in/rushil-b-patel"],
-        knowsAbout: ["JavaScript", "TypeScript", "Next", "React", "AWS", "Java", "Python", "C/C++", "Git", "GitHub", "Linux", "Cloud Technologies", "Web Development"],
+        "@graph": [
+            {
+                "@type": "Person",
+                "@id": PERSON_ID,
+                name: SITE_NAME,
+                alternateName: "Rushil Bhaveshkumar Patel",
+                url: SITE_URL,
+                image: `${SITE_URL}/profile.jpg`,
+                jobTitle: "Full Stack Developer",
+                worksFor: { "@type": "Organization", name: "Odoo", url: "https://www.odoo.com" },
+                description: "Full Stack Developer specializing in web development, modern JavaScript and Cloud Technologies",
+                sameAs: socialLinks.filter(({ href }) => href.startsWith("http")).map(({ href }) => href),
+                knowsAbout: ["JavaScript", "TypeScript", "Next", "React", "AWS", "Java", "Python", "C/C++", "Git", "GitHub", "Linux", "Cloud Technologies", "Web Development"],
+            },
+            { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: SITE_NAME, url: SITE_URL, publisher: { "@id": PERSON_ID } },
+        ],
     };
 
     return (

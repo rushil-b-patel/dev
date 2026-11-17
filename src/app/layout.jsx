@@ -27,7 +27,8 @@ export const metadata = {
     creator: "Rushil Patel",
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
     alternates: { canonical: SITE_URL },
-    openGraph: { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, url: SITE_URL, siteName: "Rushil Patel", images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "Rushil Patel - Full Stack Developer" }], type: "website", locale: "en_US" },
+    // No og:url here: child pages inherit it, so /writing and /frames claimed to be the homepage.
+    openGraph: { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, siteName: "Rushil Patel", images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "Rushil Patel - Full Stack Developer" }], type: "website", locale: "en_US" },
     twitter: { card: "summary_large_image", title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, images: [DEFAULT_OG_IMAGE], creator: "@rushil_b_patel" },
 };
 

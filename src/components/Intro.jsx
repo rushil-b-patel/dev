@@ -17,7 +17,7 @@ export default function Intro() {
                     </div>
                 </div>
                 <div className="w-20 h-20 md:w-28 md:h-28 rounded-xl border border-rule overflow-hidden shrink-0 bg-surface">
-                    <Image src="/profile.jpg" alt="Rushil" width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500" priority />
+                    <Image src="/profile.jpg" alt="Rushil Patel"width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500" priority />
                 </div>
             </div>
             <div className="flex flex-col gap-1.5 mt-8 md:mt-0">
