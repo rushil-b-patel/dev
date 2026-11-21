@@ -5,11 +5,16 @@ import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 import Link from "next/link";
+import Image from "next/image";
 import "highlight.js/styles/github-dark.css";
 import { formatPostDate, textToId } from "@/lib/utils";
 import TableOfContents from "@/components/TableOfContents";
 import ImageLightbox from "@/components/ImageLightbox";
 import QueryDemo from "@/components/QueryDemo";
+import { links } from "@/components/SocialMedia";
+import { SITE_NAME, JOB_TITLE, RESUME_PDF_URL } from "@/config/site";
+
+const EMAIL = links.find(({ label }) => label === "Email").href;
 
 function extractText(node) {
     if (!node) return "";
@@ -37,7 +42,7 @@ function Pre({ children, node, ...rest }) {
     );
 }
 
-export default function WritingPostContent({ post, headings }) {
+export default function WritingPostContent({ post, headings, more = [] }) {
     const [preview, setPreview] = useState(null);
     const [views, setViews] = useState(null);
     let imgIndex = post.cover ? 1 : 0;
@@ -60,7 +65,7 @@ export default function WritingPostContent({ post, headings }) {
             return (
                 <span className="group lg:relative">
                     {link}
-                    <span className="pointer-events-none fixed inset-x-4 bottom-4 z-50 rounded-lg border border-rule bg-surface p-3 text-sm font-normal leading-snug text-app-secondary opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 lg:absolute lg:inset-x-auto lg:bottom-full lg:left-1/2 lg:mb-2 lg:w-max lg:max-w-64 lg:-translate-x-1/2">{title}</span>
+                    <span className="pointer-events-none fixed inset-x-4 bottom-4 z-50 rounded-lg border border-rule bg-surface p-3 text-sm font-normal leading-snug text-app-secondary opacity-0 shadow-lg transition-opacity group-hover:opacity-100 group-focus-within:opacity-100 lg:absolute lg:inset-x-auto lg:bottom-full lg:left-1/2 lg:mb-2 lg:w-max lg:max-w-64 lg:-translate-x-1/2"><span className="sr-only"> (</span>{title}<span className="sr-only">)</span></span>
                 </span>
             );
         },
@@ -84,7 +89,12 @@ export default function WritingPostContent({ post, headings }) {
         pre: Pre,
     };
 
-    const date = <time dateTime={post.date}>{formatPostDate(post.date, "long")}</time>;
+    const date = (
+        <span>
+            By <Link href="/" rel="author" className="hover:text-app-primary">{SITE_NAME}</Link> · <time dateTime={post.date}>{formatPostDate(post.date, "long")}</time>
+            {post.updated && <> · <span className="whitespace-nowrap">Updated <time dateTime={post.updated}>{formatPostDate(post.updated)}</time></span></>}
+        </span>
+    );
     const readTime = (
         <span className="inline-flex items-center gap-3">
             <span>{post.readingMinutes} min read</span>
@@ -100,7 +110,7 @@ export default function WritingPostContent({ post, headings }) {
                 <header className="mb-10">
                     {post.cover && (
                         <figure className="mb-8 cursor-zoom-in bg-surface p-[2%] pb-0 shadow-sm ring-1 ring-rule" onClick={() => setPreview({ src: post.cover, alt: "" })}>
-                            <img src={post.cover} alt="" width={1200} height={675} fetchPriority="high" className="w-full h-auto" />
+                            <Image src={post.cover} alt="" width={1200} height={675} preload sizes="(min-width: 672px) 672px, 100vw" className="w-full h-auto" />
                             <figcaption className="flex flex-wrap items-center justify-between gap-x-3 py-2 text-sm text-app-muted">{date}{readTime}</figcaption>
                         </figure>
                     )}
@@ -112,6 +122,20 @@ export default function WritingPostContent({ post, headings }) {
                         {post.content}
                     </ReactMarkdown>
                 </div>
+                <footer className="mt-12 border-t border-dashed border-rule pt-6 text-sm text-app-muted">
+                    <p>
+                        Written by <Link href="/" rel="author" className="writing-link">{SITE_NAME}</Link>, {JOB_TITLE} at Odoo. <a href={EMAIL} className="writing-link">Email me</a> · <a href={RESUME_PDF_URL} target="_blank" rel="noopener noreferrer" className="writing-link">Resume</a>
+                    </p>
+                    {post.frames && <p className="mt-2"><Link href={`/frames/${post.frames}`} className="writing-link">See the photos →</Link></p>}
+                    {more.length > 0 && (
+                        <nav aria-label="More writing" className="mt-6">
+                            <h2 className="font-semibold text-app-primary">More writing</h2>
+                            <ul className="mt-2 space-y-1">
+                                {more.map((p) => <li key={p.slug}><Link href={`/writing/${p.slug}`} className="writing-link">{p.title}</Link></li>)}
+                            </ul>
+                        </nav>
+                    )}
+                </footer>
             </article>
         </>
     );

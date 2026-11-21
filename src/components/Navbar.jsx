@@ -7,7 +7,7 @@ import { RESUME_PDF_URL } from "@/config/site";
 export default function Navbar() {
     const pathname = usePathname();
     const navLinkClass = (href) =>
-        `text-sm font-medium transition-colors duration-200 ${pathname === href ? "text-app-primary" : "text-app-muted hover:text-app-primary"}`;
+        `py-2 text-sm font-medium transition-colors duration-200 ${pathname === href ? "text-app-primary" : "text-app-muted hover:text-app-primary"}`;
 
     return (
         <header className="w-full px-4 sm:px-6">
@@ -16,7 +16,7 @@ export default function Navbar() {
                     <Link href="/" className={navLinkClass("/")}>Home</Link>
                     <Link href="/writing" className={navLinkClass("/writing")}>Writing</Link>
                     <Link href="/frames" className={navLinkClass("/frames")}>Frames</Link>
-                    <a href={RESUME_PDF_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-app-muted transition-colors duration-200 hover:text-app-primary">Resume</a>
+                    <a href={RESUME_PDF_URL} target="_blank" rel="noopener noreferrer" className="py-2 text-sm font-medium text-app-muted transition-colors duration-200 hover:text-app-primary">Resume</a>
                 </nav>
                 <ThemeToggle />
             </div>

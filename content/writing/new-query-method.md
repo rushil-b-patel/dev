@@ -1,8 +1,9 @@
 ---
 title: "The new HTTP method - QUERY"
 date: "2026-07-07"
+updated: "2026-11-21"
 cover: "/Writing/covers/query.png"
-description: "The QUERY method is used to ask the target resource to perform a query operation within the scope of that target resource."
+description: "QUERY (RFC 10008) is a new HTTP method: safe and idempotent like GET, but the query goes in the request body like POST. How it works, with a live demo."
 ---
 
 ## 1. Why HTTP needed a new verb
@@ -17,8 +18,25 @@ description: "The QUERY method is used to ask the target resource to perform a q
 - Semantics of `GET`, body of `POST` - responses are cacheable (the cache key includes the request body).
 - Servers advertise support and accepted query formats via the `Accept-Query` header.
 - `Location` / `Content-Location` in the response can point at a stored query / stored results, so a follow-up plain `GET` can re-fetch without resending the body.
-- `QUERY` requests are safe with regard to the target resource; that is, the client does not request or expect any change to the state of the target resource. This does not prevent the server from creating additional HTTP resources through which additional information can be retrieved.
-- Furthermore, `QUERY` requests are idempotent; they can be retried or repeated when needed, for instance, after a connection failure.
+
+In the spec's own words ([RFC 10008](https://www.rfc-editor.org/info/rfc10008)):
+
+> QUERY requests are safe with regard to the target resource; that is, the client does not request or expect any change to the state of the target resource. This does not prevent the server from creating additional HTTP resources through which additional information can be retrieved.
+>
+> Furthermore, QUERY requests are idempotent; they can be retried or repeated when needed, for instance, after a connection failure.
+
+### GET vs POST vs QUERY
+
+| | `GET` | `POST` | `QUERY` |
+| --- | --- | --- | --- |
+| Request body | No defined meaning | Yes | Yes, it carries the query |
+| Safe (read-only) | Yes | No | Yes |
+| Idempotent | Yes | No | Yes |
+| Cacheable | Yes | Rarely (needs explicit freshness) | Yes, the body is part of the cache key |
+| Auto-retry after a dropped connection | Yes | No | Yes |
+| Query size limit | URL length limits | None in practice | None in practice |
+
+The retry row is the practical win: clients and proxies can retry a `QUERY` on their own, the same way they retry a `GET` after a timeout or a [rate-limit](/writing/rate-limiting) `429`.
 
 ## 3. QUERY on the wire - try it live
 

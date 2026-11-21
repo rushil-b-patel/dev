@@ -32,9 +32,9 @@ Email is a good way to picture it. You can write from Gmail to an Outlook addres
 | **RBI** | Holds an account for each bank, where banks finally pay each other | The banks' bank |
 
 **NPCI** is a [not-for-profit promoted by banks](https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=21082), not a government department.  
-[Here](https://pay.google.com/intl/en_in/about/external/npci/) are the details for all the roles & responsibilites.
+[Here](https://pay.google.com/intl/en_in/about/external/npci/) are the details for all the roles & responsibilities.
 
-## 3. How UPI actually works !
+## 3. How UPI actually works
 
 ![UPI Diagram](/Writing/upi.png)
 
@@ -95,7 +95,7 @@ The real payment between banks is called settlement, and it happens later:
 
 UPI runs [10 settlement cycles for payments, plus 2 for disputes](https://simpliance.in/India/FCC/govt_notification/Central/circular-regarding-segregation-of-upi-settlement-cycles-for-auth-and-dispute-transactions-7367).
 
-Batching works because of netting. Payments flow in both directions all day, and much of that cancels out (like a simplify dept in splitwise).
+Batching works because of netting. Payments flow in both directions all day, and much of that cancels out (like Splitwise's "simplify debts").
 
 ![upi-settlement](/Writing/upi2.png)
 

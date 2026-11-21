@@ -19,7 +19,7 @@ export default function TableOfContents({ headings }) {
             <div className="group flex items-center">
                 <div className={`mr-2 max-w-56 transition-[opacity,transform] duration-300 ease-out ${open ? reveal : "opacity-0 translate-x-3 scale-[0.97] pointer-events-none"} group-hover:opacity-100 group-hover:translate-x-0 group-hover:scale-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-x-0 group-focus-within:scale-100 group-focus-within:pointer-events-auto`}>
                     <div className="bg-white/75 dark:bg-neutral-900/75 backdrop-blur-xl rounded-xl border border-rule px-5 py-4 shadow-lg shadow-black/[0.04] dark:shadow-black/20">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-app-muted mb-3 select-none">Contents</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.15em] text-app-muted mb-3 select-none">Contents</p>
                         <nav aria-label="Table of contents">
                             <ul className="space-y-1.5">
                                 {headings.map((h) => (

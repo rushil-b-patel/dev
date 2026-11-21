@@ -6,8 +6,7 @@ export default function robots() {
             {
                 userAgent: "*",
                 allow: "/",
-                // /cdn-cgi/: Cloudflare rewrites the mailto link to /cdn-cgi/l/email-protection, which 404s for crawlers.
-                // /_next/ stays crawlable: Google needs its JS, CSS and images to render pages.
+                // Cloudflare rewrites mailto links to /cdn-cgi/l/email-protection, which 404s for crawlers.
                 disallow: ["/api/", "/cdn-cgi/"],
             },
         ],

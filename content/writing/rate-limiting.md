@@ -1,14 +1,14 @@
 ---
-title: "Rate Limiting"
+title: "Rate Limiting Algorithms: Fixed Window vs Sliding Window vs Token Bucket"
 date: "2026-04-16"
 cover: "/Writing/covers/rate-limiting.png"
-description: "What rate limiting is, how common algorithms compare, and how Stripe and OpenAI apply limits in production."
+description: "What rate limiting is, how fixed window, sliding window and token bucket compare, and how Stripe and OpenAI apply limits in production."
 slug: "rate-limiting"
 ---
 
 ## 1. Why rate limiting exists
 
-Imagine your API has 1,000 users. One of them ships a bug: their script fires 50,000 requests in 10 seconds. What happens to the other 999? The server does not distinguish a bug, a bot, and a real user it just receives requests.
+Imagine your API has 1,000 users. One of them ships a bug: their script fires 50,000 requests in 10 seconds. What happens to the other 999? The server does not distinguish a bug, a bot, and a real user; it just receives requests.
 
 - A single runaway client floods the server.
 - Queues fill → latency spikes → timeouts cascade.
@@ -60,9 +60,9 @@ All four must be defined explicitly.
 A fixed number of requests is allowed per fixed time window. A counter increments per request and resets when the window rolls.
 
 - **How it works:** One counter per window, increment on each request, reset at window boundary.
-- **Boundary burst:** There is a problem with Fixed Window, it allows you to request twice the defined limit near the end of a window you can send traffic, after reset you can send again so you can get up to 2x the nominal limit across the seam (e.g. 5 requests at t=59s, window resets at t=60s, 5 more at t=61s → 10 in ~2s with a 5/min rule).
+- **Boundary burst:** There is a problem with Fixed Window: it allows up to twice the defined limit. You can send a full limit of traffic near the end of a window, then send again right after the reset, so you get up to 2x the nominal limit across the seam (e.g. 5 requests at t=59s, window resets at t=60s, 5 more at t=61s → 10 in ~2s with a 5/min rule).
 - **Example:** GitHub's API uses a fixed window with `limit = 5000`, `windowDuration = 1h`, aligned to wall-clock hours.
-- **Use when:** You want simplicity over perfect smoothness internal tools, coarse abuse prevention, clear user quotas.
+- **Use when:** You want simplicity over perfect smoothness: internal tools, coarse abuse prevention, clear user quotas.
 
 **Per-user window start:** Instead of using a same(static) window for everyone, the window can start at the user's first request instead of the clock. That removes a shared "reset spike" but makes reset time harder for users to predict.
 
@@ -70,7 +70,7 @@ A fixed number of requests is allowed per fixed time window. A counter increment
 
 The limit is enforced over a moving time span instead of a single fixed block.
 
-- **Naive approach:** Store a timestamp per request, count how many fall in the last N seconds. Accurate, but memory grows with traffic painful at scale.
+- **Naive approach:** Store a timestamp per request, count how many fall in the last N seconds. Accurate, but memory grows with traffic, which is painful at scale.
 
 ![Sliding window 1](/Writing/sliding-window-1.png "Sliding window log: a timestamp stored per request")
 
@@ -157,7 +157,7 @@ Critical paths ← never shed if possible
 
 ### OpenAI: multiple limits at once
 
-Many products expose one knob. OpenAI exposes several in parallel (e.g. requests per minute/day, tokens per minute/day, images per minute). Whichever you hit first wins they are independent guards.
+Many products expose one knob. OpenAI exposes several in parallel (e.g. requests per minute/day, tokens per minute/day, images per minute). Whichever you hit first wins; they are independent guards.
 
 ```text
 RPM - requests per minute
