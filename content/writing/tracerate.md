@@ -5,16 +5,16 @@ cover: "/Writing/covers/tracerate.png"
 description: "A CLI tool that goes beyond speed testing. Checking download/upload, ping, jitter, bufferbloat, regional latency, and IP & DNS info."
 ---
 
-## 1. What is Tracerate ?
+## 1. What is Tracerate?
 Tracerate is a CLI network diagnostic tool that checks download/upload speed, ping, jitter, bufferbloat, regional latency, and IP/DNS info, all in one shot. It's like a Swiss Army knife for network troubleshooting, giving you a comprehensive snapshot of your connection's health and performance right in your terminal.
 
-## 2. Why I built tracerate ?
+## 2. Why I built Tracerate
 This is what I do when my network goes down in the middle of some work, the first instinct is to usually fire up my browser and open a new tab and search for "speed test" then I go through 1 or 2 sites (usually [fast.com](http://fast.com) or [Measurements lab](https://www.measurementlab.net)), and all I got is plain download/upload speed, no other detail at all. So I thought instead of opening a browser and a new tab, why can't I just check in my terminal (as a developer I'm always in the terminal). So instead of jumping direct to create one, I checked for existing CLI tools. I found one by [Ookla](https://www.speedtest.net/apps/cli) which is good, impressive but heavy weight, and then there's `speedtest-cli` by [speedtest.net](https://github.com/sivel/speedtest-cli) which is kind of archived I guess as that's what the repo says, and btw the output is so plain and again just download/upload speed not much information. So there comes my motivation to get my hands dirty & build a tool for it.
 
 ![speedtest by Ookla](/Writing/speedtest-ookla.png "Speedtest CLI by Ookla")
 ![speedtest-cli by speedtest.net](/Writing/speedtest-cli.png "speedtest-cli by Speedtest.net")
 
-## 3. How I built it ?
+## 3. How I built it
 Before jumping to HOW, a big question might have come to your mind, Why did I choose Python? (If you have seen the [codebase](https://github.com/rushil-b-patel/tracerate)) Well it's very simple, because I wanted to practice Python and improve my hands on it. In this AI world no one writes code by bare hand now and I kind of lost my grip in python, actually never had one because I mostly work with JavaScript at work, and also in my personal projects there is less to none Python. So I wanted to indulge more in Python and get my hands on with it.
 
 Also, almost everything the tool does is waiting on the network, so the usual concurrency complaints don't really apply. The ecosystem for this kind of CLI work is mature, everything I needed already existed, and I could focus on the actual measurement logic instead of plumbing. so I decided to go with Python ;)
@@ -84,8 +84,8 @@ Most home connections are a B or C. Anything above that and your router really i
 
 ### Regional Latency
 
-This one is just to give you a feel of where you actually are on the global internet, not just where your ISP says you are. It picks 8 Linode speedtest endpoints, located in Mumbai, Singapore, Tokyo, London, Frankfurt, Newark, Fremont, Sydney, etc., because Linode runs them in fixed locations and they don't rate-limit TCP connects.
-For each one is TCP pinged (3 attempts, take the min, 2 second timeout) and run all 8 in parallel. The whole thing finishes in roughly the time of the slowest ping, around 2-3 seconds. Output is sorted by latency, with a colored bar so you can see at a glance which region you're closest to. If a region times out, it shows as "timeout" instead of 0 ms, which would have been misleading.
+This one is just to give you a feel of where you actually are on the global internet, not just where your ISP says you are. It picks 8 Linode speedtest endpoints, located in Mumbai, Singapore, Tokyo, London, Frankfurt, Newark, Fremont, Sydney, etc., because Linode runs them in fixed locations and they don't [rate-limit](/writing/rate-limiting) TCP connects.
+Each one is TCP pinged (3 attempts, take the min, 2 second timeout), and all 8 run in parallel. The whole thing finishes in roughly the time of the slowest ping, around 2-3 seconds. Output is sorted by latency, with a colored bar so you can see at a glance which region you're closest to. If a region times out, it shows as "timeout" instead of 0 ms, which would have been misleading.
 
 ### Output & UX (Console Print)
 
@@ -96,13 +96,15 @@ A few things rich does for the output:
 - Progress bars during download/upload that update in place with current Mbps and elapsed seconds.
 - Status spinners while doing IP lookup and bufferbloat probing, so the terminal isn't sitting silent.
 - Custom bars drawn with `▰▱` characters, scaled to the max value in the current section (so download and upload share a scale, regions share their own).
-- Color coded grades and verdicts DNS over 150ms goes red, bufferbloat F goes red, healthy connection gets a green checkmark, etc.
+- Color coded grades and verdicts: DNS over 150ms goes red, bufferbloat F goes red, healthy connection gets a green checkmark, etc.
 
 There's also a small rule-based analyze function in [verdict.py](https://github.com/rushil-b-patel/tracerate/blob/master/tracerate/verdict.py#L30) that looks at all the numbers together and produces one human sentence at the bottom. Like "Packet loss detected, connection is unstable" or "Low bandwidth, ISP speed is the bottleneck" or just "Connection looks healthy". It's nothing fancy, just a stack of ifs, but it saves you from having to interpret 8 numbers yourself when you're already annoyed because your network is misbehaving.
 
 ![tracerate output](/Writing/tracerate.png "Tracerate Output")
 
 ### Commands
+
+Install it from [PyPI](https://pypi.org/project/tracerate/) with `pip install tracerate`.
 
 Typer is the reason the help text just works. You write your function with type-annotated arguments and `typer.Option` defaults, and you get a `--help` page for free. The flags exposed are:
 

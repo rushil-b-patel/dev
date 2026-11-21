@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { FRAMES_URL } from "@/config/site";
 
 const ROW_HEIGHT = "clamp(180px, 22vw, 300px)";
+const EAGER_TILES = 4;
 const STACKED_PRINTS = "shadow-[5px_-5px_0_-1px_var(--background-color),5px_-5px_0_0_var(--text-muted),10px_-10px_0_-1px_var(--background-color),10px_-10px_0_0_var(--text-muted)]";
 
 const url = (id, size, ext) => `${FRAMES_URL}/${id}-${size}.${ext}`;
@@ -21,7 +22,7 @@ function rowItemStyle(frame) {
     return { flexGrow: ratio, flexBasis: `calc(${ratio} * ${ROW_HEIGHT})` };
 }
 
-function Thumbnail({ frame, alt, className = "" }) {
+function Thumbnail({ frame, alt, className = "", eager = false }) {
     // Allows for rows stretching up to ~1.5×. Exactly 1.5 tips retina landscapes over 1600px into the 2560 file.
     const sizes = `min(100vw, calc(${(frame.w / frame.h) * 1.49} * ${ROW_HEIGHT}))`;
     return (
@@ -34,8 +35,9 @@ function Thumbnail({ frame, alt, className = "" }) {
                 alt={alt}
                 width={frame.w}
                 height={frame.h}
-                loading="lazy"
-                decoding="async"
+                loading={eager ? "eager" : "lazy"}
+                fetchPriority={eager ? "high" : undefined}
+                decoding={eager ? undefined : "async"}
                 className="h-auto w-full"
             />
         </picture>
@@ -64,10 +66,10 @@ export default function ContactSheet({ frames, folders = [] }) {
         <>
             {/* Justified rows: each photo grows by its aspect ratio. The ::after spacer keeps the last row from stretching. */}
             <ul className="flex flex-wrap gap-x-4 gap-y-8 after:grow-[9999] lg:gap-x-6">
-                {folders.map((folder) => (
+                {folders.map((folder, i) => (
                     <li key={folder.slug} className="min-w-0" style={rowItemStyle(folder.cover)}>
                         <Link href={`/frames/${folder.slug}`} className="block" aria-label={`Open ${folder.name}, ${folder.count} photos`}>
-                            <Thumbnail frame={folder.cover} alt="" className={STACKED_PRINTS} />
+                            <Thumbnail frame={folder.cover} alt="" className={STACKED_PRINTS} eager={i < EAGER_TILES} />
                             <span className="mt-2 flex items-baseline gap-2 font-mono text-xs">
                                 <span className="truncate text-app-primary">{folder.name}</span>
                                 <span className="text-app-muted">{folder.count}</span>
@@ -78,7 +80,7 @@ export default function ContactSheet({ frames, folders = [] }) {
                 {frames.map((item, i) => (
                     <li key={item.id} className="min-w-0" style={rowItemStyle(item)}>
                         <button type="button" onClick={() => setIndex(i)} className="block w-full cursor-zoom-in text-left" aria-label={`Open ${altFor(item, i)}`}>
-                            <Thumbnail frame={item} alt={altFor(item, i)} />
+                            <Thumbnail frame={item} alt={altFor(item, i)} eager={folders.length + i < EAGER_TILES} />
                             <span className="mt-2 flex items-baseline gap-2 font-mono text-xs">
                                 <span className="text-saffron">{number(i)}</span>
                                 {item.place && <span className="truncate text-app-muted">{item.place}</span>}

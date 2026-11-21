@@ -2,6 +2,7 @@
 title: "UAE through my lens"
 date: "2026-10-28"
 cover: "/Writing/covers/uae.png"
+frames: "uae"
 description: "My first trip abroad: what I noticed in the UAE, from zebra crossings and cloud seeding to cheap gold and low taxes."
 ---
 
@@ -72,7 +73,7 @@ By tradition, the ruler of Abu Dhabi is the president of the UAE. But the presid
 
 ## 9. What I'm taking back home
 
-Three things. First, small rules, followed by everyone, change how a city feels. Second, public spaces say a lot about what a place values. Third, whenever something looks "cheap" or "free," it's worth asking who is paying for it and how.
+Three things. First, small rules, followed by everyone, change how a city feels. Second, public spaces say a lot about what a place values. Third, whenever something looks "cheap" or "free," it's worth asking [who is paying for it](/writing/how-upi-works) and how.
 
 > "The real voyage of discovery consists not in seeking new landscapes, but in having new eyes."
 >

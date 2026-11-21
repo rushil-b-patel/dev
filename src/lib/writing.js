@@ -49,7 +49,8 @@ export function getAllPosts() {
         const { data, content } = parseFrontmatter(raw);
         if (!data.title || !data.date) return null;
         const slug = data.slug || file.replace(/\.mdx?$/, "");
-        return { slug: String(slug), title: String(data.title), date: String(data.date), description: data.description ? String(data.description) : "", cover: data.cover ? String(data.cover) : "", content, readingMinutes: readingMinutes(content) };
+        const str = (value) => (value ? String(value) : "");
+        return { slug: String(slug), title: String(data.title), date: String(data.date), updated: str(data.updated), description: str(data.description), cover: str(data.cover), frames: str(data.frames), content, readingMinutes: readingMinutes(content) };
     }).filter(Boolean);
     return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }

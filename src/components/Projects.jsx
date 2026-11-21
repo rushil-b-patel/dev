@@ -18,9 +18,9 @@ export default function Projects() {
                         <div className="flex items-baseline justify-between gap-4">
                             <h3 className="text-base font-semibold text-app-primary">{project.title}</h3>
                             <div className="flex items-center gap-3 shrink-0 text-app-muted">
-                                {project.writingLink && <Link href={project.writingLink} className="link-app" title="Read the write-up" aria-label={`Read the ${project.title} write-up`}><FiBookOpen size={15} /></Link>}
-                                {project.liveLink && <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="link-app" aria-label={`${project.title} live`}><FiExternalLink size={15} /></a>}
-                                {project.codeLink && <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="link-app" aria-label={`${project.title} source`}><FiGithub size={15} /></a>}
+                                {project.writingLink && <Link href={project.writingLink} className="link-app -m-1 p-1" title="Read the write-up" aria-label={`Read the ${project.title} write-up`}><FiBookOpen size={15} /></Link>}
+                                {project.liveLink && <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="link-app -m-1 p-1" aria-label={`${project.title} live`}><FiExternalLink size={15} /></a>}
+                                {project.codeLink && <a href={project.codeLink} target="_blank" rel="noopener noreferrer" className="link-app -m-1 p-1" aria-label={`${project.title} source`}><FiGithub size={15} /></a>}
                             </div>
                         </div>
                         <p className="text-sm text-app-muted leading-relaxed mt-1">{project.description}</p>

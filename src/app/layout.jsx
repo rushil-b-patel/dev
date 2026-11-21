@@ -3,7 +3,7 @@ import { Google_Sans } from "next/font/google";
 import { Geist } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeContext";
 import Navbar from "@/components/Navbar";
-import { DEFAULT_TITLE, DEFAULT_DESCRIPTION, SITE_URL, DEFAULT_OG_IMAGE } from "@/config/site";
+import { DEFAULT_TITLE, DEFAULT_DESCRIPTION, SITE_URL, SITE_NAME, pageMetadata } from "@/config/site";
 
 const googleSans = Google_Sans({
     subsets: ["latin"],
@@ -19,25 +19,19 @@ const geist = Geist({
 });
 
 export const metadata = {
+    ...pageMetadata({ description: DEFAULT_DESCRIPTION }),
     metadataBase: new URL(SITE_URL),
-    title: { default: DEFAULT_TITLE, template: "%s | Rushil Patel" },
-    description: DEFAULT_DESCRIPTION,
-    keywords: ["Rushil Patel", "full stack developer", "software developer", "web developer", "Next.js", "React", "JavaScript", "TypeScript", "AWS", "Cloud Technologies", "Java", "Python"],
-    authors: [{ name: "Rushil Patel", url: SITE_URL }],
-    creator: "Rushil Patel",
+    title: { default: DEFAULT_TITLE, template: `%s | ${SITE_NAME}` },
+    authors: [{ name: SITE_NAME, url: SITE_URL }],
+    creator: SITE_NAME,
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
-    alternates: { canonical: SITE_URL },
-    // No og:url here: child pages inherit it, so /writing and /frames claimed to be the homepage.
-    openGraph: { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, siteName: "Rushil Patel", images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630, alt: "Rushil Patel - Full Stack Developer" }], type: "website", locale: "en_US" },
-    twitter: { card: "summary_large_image", title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION, images: [DEFAULT_OG_IMAGE], creator: "@rushil_b_patel" },
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`light ${googleSans.variable} ${geist.variable}`} suppressHydrationWarning>
             <head>
-                <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement;d.classList.remove('light','dark');d.classList.add(localStorage.getItem('theme')||'light')})()` }} />
-                <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+                <script dangerouslySetInnerHTML={{ __html: `(function(){var d=document.documentElement,t=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');d.classList.remove('light','dark');d.classList.add(t)})()` }} />
             </head>
             <body className="font-sans">
                 <ThemeProvider>

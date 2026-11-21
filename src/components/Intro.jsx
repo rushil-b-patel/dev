@@ -6,10 +6,11 @@ export default function Intro() {
         <div>
             <div className="flex justify-between">
                 <div className="flex flex-col gap-2">
+                    {/* Real spaces: crawlers don't see CSS-only spacing. */}
                     <h1 className="text-2xl md:text-4xl font-medium leading-tight">
-                        <span className="block md:inline">Rushil</span>
-                        <span className="block md:inline md:before:content-['_']">Bhaveshkumar</span>
-                        <span className="block md:inline md:before:content-['_']">Patel</span>
+                        <span className="block md:inline">Rushil</span>{" "}
+                        <span className="block md:inline">Bhaveshkumar</span>{" "}
+                        <span className="block md:inline">Patel</span>
                     </h1>
                     <div className="flex flex-col md:flex-row md:justify-between">
                         <p className="md:text-lg whitespace-nowrap">Full Stack Engineer</p>
@@ -17,7 +18,7 @@ export default function Intro() {
                     </div>
                 </div>
                 <div className="w-20 h-20 md:w-28 md:h-28 rounded-xl border border-rule overflow-hidden shrink-0 bg-surface">
-                    <Image src="/profile.jpg" alt="Rushil Patel"width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500" priority />
+                    <Image src="/profile.jpg" alt="Rushil Patel" width={112} height={112} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-[filter] duration-500" preload />
                 </div>
             </div>
             <div className="flex flex-col gap-1.5 mt-8 md:mt-0">

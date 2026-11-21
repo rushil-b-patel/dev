@@ -30,7 +30,7 @@ export default function SocialMedia() {
                     href={href}
                     aria-label={label}
                     style={{ "--brand-light": brand, "--brand-dark": brandDark ?? brand }}
-                    className="social-brand transition-colors duration-200 hover:text-[var(--brand)]"
+                    className="social-brand -m-1 inline-flex p-1 transition-colors duration-200 hover:text-[var(--brand)]"
                     {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 >
                     <Icon size={16} />

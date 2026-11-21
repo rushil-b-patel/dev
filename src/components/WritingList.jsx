@@ -34,6 +34,7 @@ export default function WritingList({ posts }) {
                     ))}
                 </ul>
             )}
+            <Link href="/writing" className="link-app mt-2 inline-block py-2 text-sm">All writing →</Link>
         </section>
     );
 }

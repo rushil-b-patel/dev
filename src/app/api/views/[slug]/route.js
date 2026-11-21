@@ -18,10 +18,7 @@ export async function POST(request, { params }) {
     const { slug } = await params;
     if (!getAllSlugs().includes(slug)) return new Response(null, { status: 404 });
 
-    // Browsers hide incognito and wipe its storage, so visitors are recognised on the
-    // server instead: same IP + browser counts once per post per day, incognito or not.
     // Cloudflare proxies the site, so x-forwarded-for alone would be its edge IP.
-    // ponytail: people sharing an IP and browser undercount, fine for a blog.
     const { headers } = request;
     const ip = headers.get("cf-connecting-ip") ?? headers.get("x-forwarded-for") ?? "";
     const visitor = createHmac("sha256", process.env.UPSTASH_REDIS_REST_TOKEN)

@@ -7,11 +7,11 @@ import WorkSection from "@/components/WorkSection";
 import Quote from "@/components/Quote";
 const GithubContributions = dynamic(() => import("@/components/GithubContributions"), { loading: () => null });
 import { links as socialLinks } from "@/components/SocialMedia";
-import { SITE_NAME, SITE_URL, PERSON_ID } from "@/config/site";
+import { SITE_NAME, SITE_URL, PERSON_ID, WEBSITE_ID, JOB_TITLE, DEFAULT_TITLE, DEFAULT_DESCRIPTION, pageMetadata } from "@/config/site";
+
+export const metadata = pageMetadata({ description: DEFAULT_DESCRIPTION, path: "" });
 
 export default function Home() {
-    // One Person entity (with every profile in sameAs) + a WebSite naming the site, so Google
-    // can tell this Rushil Patel apart from the others and show "Rushil Patel" as the site name.
     const personSchema = {
         "@context": "https://schema.org",
         "@graph": [
@@ -19,16 +19,17 @@ export default function Home() {
                 "@type": "Person",
                 "@id": PERSON_ID,
                 name: SITE_NAME,
-                alternateName: "Rushil Bhaveshkumar Patel",
+                alternateName: ["Rushil Bhaveshkumar Patel", "Rushil B Patel"],
                 url: SITE_URL,
                 image: `${SITE_URL}/profile.jpg`,
-                jobTitle: "Full Stack Developer",
+                jobTitle: JOB_TITLE,
                 worksFor: { "@type": "Organization", name: "Odoo", url: "https://www.odoo.com" },
-                description: "Full Stack Developer specializing in web development, modern JavaScript and Cloud Technologies",
+                description: DEFAULT_DESCRIPTION,
                 sameAs: socialLinks.filter(({ href }) => href.startsWith("http")).map(({ href }) => href),
-                knowsAbout: ["JavaScript", "TypeScript", "Next", "React", "AWS", "Java", "Python", "C/C++", "Git", "GitHub", "Linux", "Cloud Technologies", "Web Development"],
+                knowsAbout: ["JavaScript", "TypeScript", "Next.js", "React", "Odoo", "AWS", "Java", "Python", "C/C++", "Git", "GitHub", "Linux", "Web Development"],
             },
-            { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: SITE_NAME, url: SITE_URL, publisher: { "@id": PERSON_ID } },
+            { "@type": "WebSite", "@id": WEBSITE_ID, name: SITE_NAME, url: SITE_URL, publisher: { "@id": PERSON_ID } },
+            { "@type": "ProfilePage", "@id": `${SITE_URL}/#profile`, url: SITE_URL, name: DEFAULT_TITLE, isPartOf: { "@id": WEBSITE_ID }, mainEntity: { "@id": PERSON_ID } },
         ],
     };
 
